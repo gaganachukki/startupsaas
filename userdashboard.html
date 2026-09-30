@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard | STACKLY</title>
+    <link rel="stylesheet" href="userdashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <aside class="sidebar">
+        <a href="index.html" class="logo-area"><img src="assets/logo.webp" alt="Stackly Logo" style="height: 36px; width: auto; object-fit: contain;"></a>
+        
+        <div class="sidebar-profile">
+            <div class="sp-avatar">CH</div>
+            <div class="sp-info">
+                <div class="sp-name">Chukki Founder</div>
+                <div class="sp-email">chukki@startup.com</div>
+                <div class="sp-badge">USER PANEL</div>
+            </div>
+        </div>
+
+        <div class="nav-section">
+            <div class="nav-heading">MAIN</div>
+            <a href="#" class="nav-link active" onclick="document.querySelector('.sidebar').classList.remove('active'); document.querySelector('.sidebar-overlay').classList.remove('active'); switchSection(event, 'section-dashboard')">Dashboard</a>
+            <a href="#" class="nav-link" onclick="document.querySelector('.sidebar').classList.remove('active'); document.querySelector('.sidebar-overlay').classList.remove('active'); switchSection(event, 'section-projects')">My Projects</a>
+            <a href="#" class="nav-link" onclick="document.querySelector('.sidebar').classList.remove('active'); document.querySelector('.sidebar-overlay').classList.remove('active'); switchSection(event, 'section-deployments')">Deployments</a>
+        </div>
+        
+        <div class="nav-section">
+            <div class="nav-heading">RESOURCES</div>
+            <a href="#" class="nav-link" onclick="document.querySelector('.sidebar').classList.remove('active'); document.querySelector('.sidebar-overlay').classList.remove('active'); switchSection(event, 'section-api')">API & Webhooks</a>
+            <a href="#" class="nav-link" onclick="document.querySelector('.sidebar').classList.remove('active'); document.querySelector('.sidebar-overlay').classList.remove('active'); switchSection(event, 'section-help')">Help Center</a>
+            <a href="#" class="nav-link" onclick="document.querySelector('.sidebar').classList.remove('active'); document.querySelector('.sidebar-overlay').classList.remove('active'); switchSection(event, 'section-billing')">Billing & Usage</a>
+        </div>
+        
+        <div class="nav-section">
+            <div class="nav-heading">ACCOUNT</div>
+            <a href="#" class="nav-link" onclick="document.querySelector('.sidebar').classList.remove('active'); document.querySelector('.sidebar-overlay').classList.remove('active'); switchSection(event, 'section-profile')">My Profile</a>
+            <a href="login.html" class="nav-logout" onclick="localStorage.removeItem(\'stacklyUserEmail\')"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a>
+        </div>
+    </aside>
+
+    <div class="main-wrapper">
+        <div class="sidebar-overlay" onclick="document.querySelector('.sidebar').classList.remove('active'); this.classList.remove('active');"></div>
+        <header class="topbar">
+            <div class="mobile-hamburger" onclick="document.querySelector('.sidebar').classList.add('active'); document.querySelector('.sidebar-overlay').classList.add('active');">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            
+            <div class="topbar-title desktop-only">Stackly Customer Portal</div>
+            
+            <div class="mobile-logo">
+                <img src="assets/logo.webp" alt="Stackly Logo" style="height: 20px; object-fit: contain;">
+            </div>
+
+            <div class="topbar-right">
+                <div class="bell-icon"><i class="fa-regular fa-bell"></i><div class="bell-badge">2</div></div>
+                <div class="topbar-user">
+                    <div class="topbar-avatar">CH</div>
+                    <span style="font-size: 0.9rem; font-weight: 500;">Chukki</span>
+                </div>
+            </div>
+        </header>
+        
+        <div class="content-area">
+            
+            <!-- Dashboard Section -->
+            <div id="section-dashboard" class="dashboard-section" style="display:block;">
+                <h1 class="page-title">Welcome back, Chukki!</h1>
+                <p class="page-subtitle">Here's what's happening with your SaaS deployments today.</p>
+
+                <div class="card card-theme-top" style="margin-bottom: 24px;">
+                    <div class="pill-theme">LIVE DEPLOYMENT IN PROGRESS</div>
+                    <div class="hero-flex">
+                        <div>
+                            <h3>Release #REL-3011 • Core API V2</h3>
+                            <p>3x Microservices, 1x DB Migration • Est. Completion in 12 Mins</p>
+                        </div>
+                        <button class="btn-theme" onclick="window.location.href='404.html'">View Logs <i class="fa-solid fa-terminal" style="margin-left:6px;"></i></button>
+                    </div>
+                    
+                    <div class="timeline-wrapper">
+                        <div class="timeline-line"></div>
+                        <div class="timeline-step">
+                            <div class="step-icon done"><i class="fa-solid fa-check"></i></div>
+                            <div class="step-text">Build Passing</div>
+                        </div>
+                        <div class="timeline-step">
+                            <div class="step-icon done"><i class="fa-solid fa-check"></i></div>
+                            <div class="step-text">Tests Passed</div>
+                        </div>
+                        <div class="timeline-step">
+                            <div class="step-icon active"><i class="fa-solid fa-spinner fa-spin"></i></div>
+                            <div class="step-text">Deploying to Edge</div>
+                        </div>
+                        <div class="timeline-step">
+                            <div class="step-icon pending"><i class="fa-solid fa-rocket"></i></div>
+                            <div class="step-text">Live</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="card card-theme-top stat-box">
+                        <div class="stat-num">12</div>
+                        <div class="stat-title">TOTAL PROJECTS</div>
+                        <div class="stat-trend trend-up">&uarr; 20% from last month</div>
+                    </div>
+                    <div class="card card-theme-top stat-box">
+                        <div class="stat-num">145K</div>
+                        <div class="stat-title">API REQUESTS</div>
+                        <div class="stat-trend trend-brand">Via Stackly Global CDN</div>
+                    </div>
+                    <div class="card card-theme-top stat-box">
+                        <div class="stat-num">99.9%</div>
+                        <div class="stat-title">SYSTEM UPTIME</div>
+                        <div class="stat-trend" style="color:#5c43f6;">Enterprise SLA active</div>
+                    </div>
+                    <div class="card card-theme-top stat-box">
+                        <div class="stat-num">24 min</div>
+                        <div class="stat-title">AVG BUILD SPEED</div>
+                        <div class="stat-trend trend-brand">Superfast CI/CD Tier</div>
+                    </div>
+                </div>
+
+                <div class="bottom-grid">
+                    <div class="card chart-card">
+                        <div class="chart-title">Weekly Server Compute Hours</div>
+                        <div class="mock-bar-chart">
+                            <div class="y-axis"><span>900</span><span>800</span><span>700</span><span>600</span></div>
+                            <div class="bar" style="height: 20%;"></div>
+                            <div class="bar" style="height: 35%;"></div>
+                            <div class="bar" style="height: 15%;"></div>
+                            <div class="bar" style="height: 60%;"></div>
+                            <div class="bar teal" style="height: 90%;"></div>
+                            <div class="bar" style="height: 0%;"></div>
+                            <div class="bar" style="height: 0%;"></div>
+                        </div>
+                    </div>
+                    <div class="card chart-card">
+                        <div class="chart-title">Resource Allocation</div>
+                        <div style="margin-top: 30px;">
+                            <div class="mock-donut">
+                                <div class="donut-half"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card" style="margin-top:24px;">
+                    <div class="chart-title">Recent Activity Feed</div>
+                    <table style="width:100%; text-align:left; border-collapse:collapse;">
+                        <tr style="border-bottom:1px solid #2a2e35;"><td style="padding:16px;"><i class="fa-solid fa-code-commit" style="color:#5c43f6; margin-right:12px;"></i> Commit <code>a1b2c3d</code> pushed to <strong>main</strong> by Alex</td><td style="color:#9ca3af; text-align:right;">10 mins ago</td></tr>
+                        <tr style="border-bottom:1px solid #2a2e35;"><td style="padding:16px;"><i class="fa-solid fa-server" style="color:#10b981; margin-right:12px;"></i> Server scaled up to handle traffic spike</td><td style="color:#9ca3af; text-align:right;">1 hour ago</td></tr>
+                        <tr style="border-bottom:1px solid #2a2e35;"><td style="padding:16px;"><i class="fa-solid fa-key" style="color:#f59e0b; margin-right:12px;"></i> New API Key generated for Production</td><td style="color:#9ca3af; text-align:right;">3 hours ago</td></tr>
+                        <tr><td style="padding:16px;"><i class="fa-solid fa-credit-card" style="color:#3b82f6; margin-right:12px;"></i> Monthly invoice #INV-2091 paid successfully</td><td style="color:#9ca3af; text-align:right;">Yesterday</td></tr>
+                    </table>
+                </div>
+            </div>
+
+            <!-- My Projects Section -->
+            <div id="section-projects" class="dashboard-section" style="display:none;">
+                <h1 class="page-title">My Projects</h1>
+                <p class="page-subtitle">Manage your active SaaS projects and repositories.</p>
+                <div class="card card-theme-top" style="margin-bottom:24px;">
+                    <div style="display:flex; justify-content:space-between; margin-bottom:20px;">
+                        <h3>Active Repositories</h3>
+                        <button class="btn-theme" onclick="window.location.href='404.html'"><i class="fa-solid fa-plus"></i> New Project</button>
+                    </div>
+                    <table style="width:100%; text-align:left; border-collapse:collapse;">
+                        <tr style="border-bottom:1px solid #2a2e35; color:#9ca3af;"><th style="padding:12px;">Project Name</th><th style="padding:12px;">Status</th><th style="padding:12px;">Last Updated</th><th style="padding:12px;">Action</th></tr>
+                        <tr style="border-bottom:1px solid #2a2e35;">
+                            <td style="padding:16px;"><strong>Core API V2</strong><br><span style="font-size:0.8rem; color:#9ca3af;">Node.js / Express</span></td>
+                            <td style="padding:16px;"><span class="pill-theme" style="background:#10b981;">Active</span></td>
+                            <td style="padding:16px; color:#9ca3af;">2 mins ago</td>
+                            <td style="padding:16px;"><button class="btn-action" onclick="window.location.href='404.html'">Manage</button></td>
+                        </tr>
+                        <tr style="border-bottom:1px solid #2a2e35;">
+                            <td style="padding:16px;"><strong>iOS Mobile Backend</strong><br><span style="font-size:0.8rem; color:#9ca3af;">Python / FastAPI</span></td>
+                            <td style="padding:16px;"><span class="pill-theme" style="background:#f59e0b;">Building</span></td>
+                            <td style="padding:16px; color:#9ca3af;">1 hour ago</td>
+                            <td style="padding:16px;"><button class="btn-action" onclick="window.location.href='404.html'">Manage</button></td>
+                        </tr>
+                        <tr style="border-bottom:1px solid #2a2e35;">
+                            <td style="padding:16px;"><strong>Marketing Site</strong><br><span style="font-size:0.8rem; color:#9ca3af;">React / Next.js</span></td>
+                            <td style="padding:16px;"><span class="pill-theme" style="background:#10b981;">Active</span></td>
+                            <td style="padding:16px; color:#9ca3af;">2 days ago</td>
+                            <td style="padding:16px;"><button class="btn-action" onclick="window.location.href='404.html'">Manage</button></td>
+                        </tr>
+                        <tr style="border-bottom:1px solid #2a2e35;">
+                            <td style="padding:16px;"><strong>Auth Microservice</strong><br><span style="font-size:0.8rem; color:#9ca3af;">Go / Gin</span></td>
+                            <td style="padding:16px;"><span class="pill-theme" style="background:#10b981;">Active</span></td>
+                            <td style="padding:16px; color:#9ca3af;">5 days ago</td>
+                            <td style="padding:16px;"><button class="btn-action" onclick="window.location.href='404.html'">Manage</button></td>
+                        </tr>
+                        <tr style="border-bottom:1px solid #2a2e35;">
+                            <td style="padding:16px;"><strong>Data Pipeline Worker</strong><br><span style="font-size:0.8rem; color:#9ca3af;">Rust</span></td>
+                            <td style="padding:16px;"><span class="pill-theme" style="background:#ef4444;">Failing</span></td>
+                            <td style="padding:16px; color:#9ca3af;">1 week ago</td>
+                            <td style="padding:16px;"><button class="btn-action" onclick="window.location.href='404.html'">Manage</button></td>
+                        </tr>
+                        <tr>
+                            <td style="padding:16px;"><strong>Legacy Dashboard</strong><br><span style="font-size:0.8rem; color:#9ca3af;">Vue.js</span></td>
+                            <td style="padding:16px;"><span class="pill-theme" style="background:#6b7280;">Archived</span></td>
+                            <td style="padding:16px; color:#9ca3af;">3 months ago</td>
+                            <td style="padding:16px;"><button class="btn-action" onclick="window.location.href='404.html'">Manage</button></td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <div class="grid" style="display:grid; grid-template-columns:1fr 1fr; gap:24px;">
+                    <div class="card">
+                        <h3>Project Health Metrics</h3>
+                        <p style="color:#9ca3af; margin:10px 0;">Average latency across all active projects.</p>
+                        <div style="display:flex; justify-content:space-between; margin-top:20px; border-bottom:1px solid #2a2e35; padding-bottom:10px;"><span>Core API V2</span> <span style="color:#10b981;">45ms</span></div>
+                        <div style="display:flex; justify-content:space-between; margin-top:10px; border-bottom:1px solid #2a2e35; padding-bottom:10px;"><span>Auth Microservice</span> <span style="color:#10b981;">22ms</span></div>
+                        <div style="display:flex; justify-content:space-between; margin-top:10px;"><span>Data Pipeline Worker</span> <span style="color:#ef4444;">1,450ms</span></div>
+                    </div>
+                    <div class="card">
+                        <h3>GitHub Integration</h3>
+                        <p style="color:#9ca3af; margin:10px 0;">Your workspace is currently synced with the <strong>Chukki-Org</strong> GitHub account.</p>
+                        <button class="btn-action" style="margin-top:20px;" onclick="window.location.href='404.html'"><i class="fa-brands fa-github"></i> Sync Repositories</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Deployments Section -->
+            <div id="section-deployments" class="dashboard-section" style="display:none;">
+                <h1 class="page-title">Deployment History</h1>
+                <p class="page-subtitle">Track your recent builds and edge deployments.</p>
+                <div class="card card-theme-top">
+                    <div style="display:flex; justify-content:space-between; margin-bottom:20px;"><h3>Recent Deploys</h3><button class="btn-theme" onclick="window.location.href='404.html'"><i class="fa-solid fa-play"></i> Trigger Build</button></div>
+                    
+                    <div style="display:flex; align-items:center; gap:16px; padding:16px; border-bottom:1px solid #2a2e35;">
+                        <div style="width:12px; height:12px; border-radius:50%; background:#10b981;"></div>
+                        <div style="flex:1;"><strong>Production - v2.1.4</strong><br><span style="font-size:0.85rem; color:#9ca3af;">Merge branch 'main'</span></div>
+                        <div style="color:#9ca3af; font-size:0.9rem;">Today, 10:45 AM</div>
+                    </div>
+                    <div style="display:flex; align-items:center; gap:16px; padding:16px; border-bottom:1px solid #2a2e35;">
+                        <div style="width:12px; height:12px; border-radius:50%; background:#10b981;"></div>
+                        <div style="flex:1;"><strong>Production - v2.1.3</strong><br><span style="font-size:0.85rem; color:#9ca3af;">Update caching logic</span></div>
+                        <div style="color:#9ca3af; font-size:0.9rem;">Yesterday, 4:15 PM</div>
+                    </div>
+                    <div style="display:flex; align-items:center; gap:16px; padding:16px; border-bottom:1px solid #2a2e35;">
+                        <div style="width:12px; height:12px; border-radius:50%; background:#ef4444;"></div>
+                        <div style="flex:1;"><strong>Staging - v2.1.3-beta</strong><br><span style="font-size:0.85rem; color:#9ca3af;">Failed: Jest tests crashed</span></div>
+                        <div style="color:#9ca3af; font-size:0.9rem;">Yesterday, 2:15 PM</div>
+                    </div>
+                    <div style="display:flex; align-items:center; gap:16px; padding:16px; border-bottom:1px solid #2a2e35;">
+                        <div style="width:12px; height:12px; border-radius:50%; background:#10b981;"></div>
+                        <div style="flex:1;"><strong>Production - v2.1.2</strong><br><span style="font-size:0.85rem; color:#9ca3af;">Hotfix: DB indexing</span></div>
+                        <div style="color:#9ca3af; font-size:0.9rem;">Oct 12, 09:00 AM</div>
+                    </div>
+                    <div style="display:flex; align-items:center; gap:16px; padding:16px; border-bottom:1px solid #2a2e35;">
+                        <div style="width:12px; height:12px; border-radius:50%; background:#10b981;"></div>
+                        <div style="flex:1;"><strong>Production - v2.1.1</strong><br><span style="font-size:0.85rem; color:#9ca3af;">Added Stripe webhooks</span></div>
+                        <div style="color:#9ca3af; font-size:0.9rem;">Oct 10, 11:30 AM</div>
+                    </div>
+                    <div style="display:flex; align-items:center; gap:16px; padding:16px; border-bottom:1px solid #2a2e35;">
+                        <div style="width:12px; height:12px; border-radius:50%; background:#10b981;"></div>
+                        <div style="flex:1;"><strong>Production - v2.1.0</strong><br><span style="font-size:0.85rem; color:#9ca3af;">Major release: New Dashboard</span></div>
+                        <div style="color:#9ca3af; font-size:0.9rem;">Oct 01, 01:00 AM</div>
+                    </div>
+                    <div style="display:flex; align-items:center; gap:16px; padding:16px; border-bottom:1px solid #2a2e35;">
+                        <div style="width:12px; height:12px; border-radius:50%; background:#6b7280;"></div>
+                        <div style="flex:1;"><strong>Preview - feat/auth-redesign</strong><br><span style="font-size:0.85rem; color:#9ca3af;">Cancelled by user</span></div>
+                        <div style="color:#9ca3af; font-size:0.9rem;">Sep 28, 04:00 PM</div>
+                    </div>
+                    <div style="display:flex; align-items:center; gap:16px; padding:16px;">
+                        <div style="width:12px; height:12px; border-radius:50%; background:#10b981;"></div>
+                        <div style="flex:1;"><strong>Production - v2.0.5</strong><br><span style="font-size:0.85rem; color:#9ca3af;">Dependency updates</span></div>
+                        <div style="color:#9ca3af; font-size:0.9rem;">Sep 25, 09:00 AM</div>
+                    </div>
+                    <button class="btn-action" style="width:100%; justify-content:center; margin-top:16px;" onclick="window.location.href='404.html'">Load More Deployments...</button>
+                </div>
+            </div>
+
+            <!-- API Keys Section -->
+            <div id="section-api" class="dashboard-section" style="display:none;">
+                <h1 class="page-title">API & Webhooks</h1>
+                <p class="page-subtitle">Manage your authentication tokens and endpoint integrations.</p>
+                <div class="card card-theme-top" style="margin-bottom:24px;">
+                    <h3>Production Key</h3>
+                    <p style="color:#9ca3af; margin-top:8px; font-size:0.9rem;">Used for your live, public-facing applications.</p>
+                    <div style="display:flex; gap:12px; margin-top:16px;">
+                        <input type="password" value="sk_prod_9876543210abcdef" readonly style="flex:1; background:#111315; border:1px solid #2a2e35; color:#d1d5db; padding:12px; border-radius:8px; outline:none;">
+                        <button class="btn-action" onclick="window.location.href='404.html'"><i class="fa-regular fa-copy"></i> Copy</button>
+                        <button class="btn-action" style="color:#ef4444; border-color:#ef4444;" onclick="window.location.href='404.html'"><i class="fa-solid fa-rotate"></i> Revoke</button>
+                    </div>
+                </div>
+                <div class="card card-theme-top" style="margin-bottom:24px;">
+                    <h3>Development Key</h3>
+                    <p style="color:#9ca3af; margin-top:8px; font-size:0.9rem;">Used for local testing and staging environments.</p>
+                    <div style="display:flex; gap:12px; margin-top:16px;">
+                        <input type="text" value="sk_test_12345qwerty" readonly style="flex:1; background:#111315; border:1px solid #2a2e35; color:#d1d5db; padding:12px; border-radius:8px; outline:none;">
+                        <button class="btn-action" onclick="window.location.href='404.html'"><i class="fa-regular fa-copy"></i> Copy</button>
+                    </div>
+                </div>
+                
+                <div class="card" style="margin-bottom:24px;">
+                    <div style="display:flex; justify-content:space-between; margin-bottom:20px;">
+                        <h3>Active Webhooks</h3>
+                        <button class="btn-action" onclick="window.location.href='404.html'"><i class="fa-solid fa-plus"></i> Add Endpoint</button>
+                    </div>
+                    <div style="border:1px solid #2a2e35; border-radius:8px; padding:16px; margin-bottom:12px;">
+                        <div style="display:flex; justify-content:space-between;"><strong>https://api.myapp.com/webhooks/deploy</strong> <span style="color:#10b981;">Active</span></div>
+                        <p style="color:#9ca3af; font-size:0.85rem; margin-top:8px;">Listens for: <code>deployment.success</code>, <code>deployment.failed</code></p>
+                    </div>
+                    <div style="border:1px solid #2a2e35; border-radius:8px; padding:16px;">
+                        <div style="display:flex; justify-content:space-between;"><strong>https://slack.com/api/webhooks/1234</strong> <span style="color:#10b981;">Active</span></div>
+                        <p style="color:#9ca3af; font-size:0.85rem; margin-top:8px;">Listens for: <code>billing.invoice_created</code></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Help Center Section -->
+            <div id="section-help" class="dashboard-section" style="display:none;">
+                <h1 class="page-title">Help Center</h1>
+                <p class="page-subtitle">Find answers or reach out to our engineering team.</p>
+                <div class="card card-theme-top" style="text-align:center; padding:60px; margin-bottom:24px;">
+                    <i class="fa-solid fa-headset fa-4x" style="color:#5c43f6; margin-bottom:24px;"></i>
+                    <h3>Need technical support?</h3>
+                    <p style="color:#9ca3af; margin:16px 0 24px;">Our engineering team is on standby to help you debug deployment issues.</p>
+                    <button class="btn-theme" style="margin:0 auto;" onclick="window.location.href='404.html'"><i class="fa-solid fa-envelope"></i> Open Support Ticket</button>
+                </div>
+                
+                <div class="grid" style="display:grid; grid-template-columns:1fr 1fr; gap:24px;">
+                    <div class="card">
+                        <h3>Frequently Asked Questions</h3>
+                        <ul style="list-style:none; padding:0; margin-top:16px;">
+                            <li style="padding:12px 0; border-bottom:1px solid #2a2e35;"><a href="404.html" style="color:#d1d5db; text-decoration:none;"><i class="fa-solid fa-chevron-right" style="color:#5c43f6; margin-right:8px;"></i> How do I upgrade my database tier?</a></li>
+                            <li style="padding:12px 0; border-bottom:1px solid #2a2e35;"><a href="404.html" style="color:#d1d5db; text-decoration:none;"><i class="fa-solid fa-chevron-right" style="color:#5c43f6; margin-right:8px;"></i> Why is my build failing with Out Of Memory?</a></li>
+                            <li style="padding:12px 0; border-bottom:1px solid #2a2e35;"><a href="404.html" style="color:#d1d5db; text-decoration:none;"><i class="fa-solid fa-chevron-right" style="color:#5c43f6; margin-right:8px;"></i> Can I set up a custom domain?</a></li>
+                            <li style="padding:12px 0;"><a href="404.html" style="color:#d1d5db; text-decoration:none;"><i class="fa-solid fa-chevron-right" style="color:#5c43f6; margin-right:8px;"></i> How do I invite team members?</a></li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3>Documentation Quick Links</h3>
+                        <ul style="list-style:none; padding:0; margin-top:16px;">
+                            <li style="padding:12px 0; border-bottom:1px solid #2a2e35;"><a href="404.html" style="color:#60a5fa; text-decoration:none;"><i class="fa-solid fa-book" style="margin-right:8px;"></i> Getting Started Guide</a></li>
+                            <li style="padding:12px 0; border-bottom:1px solid #2a2e35;"><a href="404.html" style="color:#60a5fa; text-decoration:none;"><i class="fa-solid fa-book" style="margin-right:8px;"></i> REST API Reference</a></li>
+                            <li style="padding:12px 0;"><a href="404.html" style="color:#60a5fa; text-decoration:none;"><i class="fa-solid fa-book" style="margin-right:8px;"></i> GraphQL Sandbox</a></li>
+                        </ul>
+                        
+                        <div style="margin-top:30px; padding:20px; background:#111315; border-radius:8px;">
+                            <h4>Community Discord</h4>
+                            <p style="color:#9ca3af; font-size:0.85rem; margin:10px 0;">Join 5,000+ developers in our official community.</p>
+                            <button class="btn-action" onclick="window.location.href='404.html'"><i class="fa-brands fa-discord" style="color:#5865F2;"></i> Join Server</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Billing Section -->
+            <div id="section-billing" class="dashboard-section" style="display:none;">
+                <h1 class="page-title">Billing & Usage</h1>
+                <p class="page-subtitle">Monitor your platform resources and invoices.</p>
+                <div class="grid" style="display:grid; grid-template-columns:2fr 1fr; gap:24px; margin-bottom:24px;">
+                    <div class="card card-theme-top">
+                        <div style="display:flex; justify-content:space-between; margin-bottom:12px;">
+                            <span style="font-weight:600;">Monthly API Usage</span>
+                            <span style="color:#9ca3af;">145K / 500K Requests</span>
+                        </div>
+                        <div style="width:100%; height:12px; background:#111315; border-radius:6px; overflow:hidden;">
+                            <div style="width:29%; height:100%; background:#5c43f6;"></div>
+                        </div>
+                        <p style="color:#10b981; font-size:0.85rem; margin-top:12px;"><i class="fa-solid fa-check-circle"></i> You are well within your Enterprise SLA limits.</p>
+                        
+                        <div style="display:flex; justify-content:space-between; margin-bottom:12px; margin-top:30px;">
+                            <span style="font-weight:600;">Server Compute Hours</span>
+                            <span style="color:#9ca3af;">420 / 1000 Hours</span>
+                        </div>
+                        <div style="width:100%; height:12px; background:#111315; border-radius:6px; overflow:hidden;">
+                            <div style="width:42%; height:100%; background:#3b82f6;"></div>
+                        </div>
+                    </div>
+                    <div class="card card-theme-top">
+                        <h3>Payment Method</h3>
+                        <div style="margin-top:20px; display:flex; align-items:center; gap:16px;">
+                            <i class="fa-brands fa-cc-visa fa-3x" style="color:#fff;"></i>
+                            <div>
+                                <strong>Visa ending in 4242</strong>
+                                <p style="color:#9ca3af; font-size:0.85rem;">Expires 12/28</p>
+                            </div>
+                        </div>
+                        <button class="btn-action" style="margin-top:20px; width:100%; justify-content:center;" onclick="window.location.href='404.html'">Update Card</button>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h3>Recent Invoices</h3>
+                    <table style="width:100%; text-align:left; border-collapse:collapse; margin-top:16px;">
+                        <tr style="border-bottom:1px solid #2a2e35; color:#9ca3af;"><th style="padding:12px;">Date</th><th style="padding:12px;">Invoice ID</th><th style="padding:12px;">Amount</th><th style="padding:12px;">Status</th><th style="padding:12px;">Action</th></tr>
+                        <tr style="border-bottom:1px solid #2a2e35;">
+                            <td style="padding:16px;">Oct 01, 2026</td><td style="padding:16px; font-family:monospace;">INV-2091</td><td style="padding:16px;">$499.00</td>
+                            <td style="padding:16px;"><span class="pill-theme" style="background:#10b981;">Paid</span></td>
+                            <td style="padding:16px;"><button class="btn-action" onclick="window.location.href='404.html'"><i class="fa-solid fa-download"></i> PDF</button></td>
+                        </tr>
+                        <tr style="border-bottom:1px solid #2a2e35;">
+                            <td style="padding:16px;">Sep 01, 2026</td><td style="padding:16px; font-family:monospace;">INV-1940</td><td style="padding:16px;">$499.00</td>
+                            <td style="padding:16px;"><span class="pill-theme" style="background:#10b981;">Paid</span></td>
+                            <td style="padding:16px;"><button class="btn-action" onclick="window.location.href='404.html'"><i class="fa-solid fa-download"></i> PDF</button></td>
+                        </tr>
+                        <tr style="border-bottom:1px solid #2a2e35;">
+                            <td style="padding:16px;">Aug 01, 2026</td><td style="padding:16px; font-family:monospace;">INV-1822</td><td style="padding:16px;">$499.00</td>
+                            <td style="padding:16px;"><span class="pill-theme" style="background:#10b981;">Paid</span></td>
+                            <td style="padding:16px;"><button class="btn-action" onclick="window.location.href='404.html'"><i class="fa-solid fa-download"></i> PDF</button></td>
+                        </tr>
+                        <tr style="border-bottom:1px solid #2a2e35;">
+                            <td style="padding:16px;">Jul 01, 2026</td><td style="padding:16px; font-family:monospace;">INV-1704</td><td style="padding:16px;">$499.00</td>
+                            <td style="padding:16px;"><span class="pill-theme" style="background:#10b981;">Paid</span></td>
+                            <td style="padding:16px;"><button class="btn-action" onclick="window.location.href='404.html'"><i class="fa-solid fa-download"></i> PDF</button></td>
+                        </tr>
+                        <tr>
+                            <td style="padding:16px;">Jun 01, 2026</td><td style="padding:16px; font-family:monospace;">INV-1599</td><td style="padding:16px;">$499.00</td>
+                            <td style="padding:16px;"><span class="pill-theme" style="background:#10b981;">Paid</span></td>
+                            <td style="padding:16px;"><button class="btn-action" onclick="window.location.href='404.html'"><i class="fa-solid fa-download"></i> PDF</button></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Profile Section -->
+            <div id="section-profile" class="dashboard-section" style="display:none;">
+                <h1 class="page-title">My Profile</h1>
+                <p class="page-subtitle">Update your personal information and security settings.</p>
+                <div class="card card-theme-top" style="margin-bottom:24px;">
+                    <div style="display:flex; gap:24px; align-items:center; margin-bottom:32px;">
+                        <div style="width:80px; height:80px; background:#5c43f6; color:white; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:2rem; font-weight:bold;">CH</div>
+                        <div><button class="btn-action" onclick="window.location.href='404.html'"><i class="fa-solid fa-camera"></i> Upload New Photo</button></div>
+                    </div>
+                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px;">
+                        <div>
+                            <label style="color:#9ca3af; font-size:0.85rem;">Full Name</label>
+                            <input type="text" value="Chukki Founder" style="width:100%; background:#111315; border:1px solid #2a2e35; color:white; padding:12px; border-radius:8px; margin-top:8px; outline:none;">
+                        </div>
+                        <div>
+                            <label style="color:#9ca3af; font-size:0.85rem;">Email Address</label>
+                            <input type="email" value="chukki@startup.com" style="width:100%; background:#111315; border:1px solid #2a2e35; color:white; padding:12px; border-radius:8px; margin-top:8px; outline:none;">
+                        </div>
+                        <div>
+                            <label style="color:#9ca3af; font-size:0.85rem;">Company Name</label>
+                            <input type="text" value="Acme Innovations" style="width:100%; background:#111315; border:1px solid #2a2e35; color:white; padding:12px; border-radius:8px; margin-top:8px; outline:none;">
+                        </div>
+                        <div>
+                            <label style="color:#9ca3af; font-size:0.85rem;">Timezone</label>
+                            <select style="width:100%; background:#111315; border:1px solid #2a2e35; color:white; padding:12px; border-radius:8px; margin-top:8px; outline:none;">
+                                <option>Asia/Kolkata (IST)</option>
+                                <option>UTC</option>
+                                <option>America/New_York (EST)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button class="btn-theme" style="margin-top:32px;" onclick="window.location.href='404.html'"><i class="fa-solid fa-save"></i> Save Changes</button>
+                </div>
+                
+                <div class="grid" style="display:grid; grid-template-columns:1fr 1fr; gap:24px;">
+                    <div class="card">
+                        <h3>Security</h3>
+                        <div style="margin-top:20px; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #2a2e35; padding-bottom:16px;">
+                            <div>
+                                <strong>Two-Factor Authentication</strong>
+                                <p style="color:#9ca3af; font-size:0.85rem;">Secure your account with TOTP.</p>
+                            </div>
+                            <button class="btn-theme" style="background:#10b981;" onclick="window.location.href='404.html'">Enabled</button>
+                        </div>
+                        <div style="margin-top:16px; display:flex; justify-content:space-between; align-items:center;">
+                            <div>
+                                <strong>Change Password</strong>
+                                <p style="color:#9ca3af; font-size:0.85rem;">Last changed 3 months ago.</p>
+                            </div>
+                            <button class="btn-action" onclick="window.location.href='404.html'">Update</button>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>Active Sessions</h3>
+                        <div style="margin-top:20px; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #2a2e35; padding-bottom:16px;">
+                            <div>
+                                <strong><i class="fa-brands fa-windows" style="margin-right:8px;"></i> Windows 11 • Chrome</strong>
+                                <p style="color:#10b981; font-size:0.85rem;">Current Session • Salem, India</p>
+                            </div>
+                        </div>
+                        <div style="margin-top:16px; display:flex; justify-content:space-between; align-items:center;">
+                            <div>
+                                <strong><i class="fa-brands fa-apple" style="margin-right:8px;"></i> Mac OS • Safari</strong>
+                                <p style="color:#9ca3af; font-size:0.85rem;">Active 2 days ago • Chennai, India</p>
+                            </div>
+                            <button class="btn-action" style="color:#ef4444; border-color:#ef4444;" onclick="window.location.href='404.html'">Revoke</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    
+    <script>
+    function switchSection(e, sectionId) {
+        if(e) e.preventDefault();
+        const navLinks = document.querySelectorAll('.nav-link:not(.external)');
+        navLinks.forEach(link => link.classList.remove('active'));
+        if(e) { e.currentTarget.classList.add('active'); }
+        const sections = document.querySelectorAll('.dashboard-section');
+        sections.forEach(sec => sec.style.display = 'none');
+        document.getElementById(sectionId).style.display = 'block';
+    }
+    </script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const email = localStorage.getItem('stacklyUserEmail');
+    if (email) {
+        // Extract name from email (e.g., john.doe@... -> John Doe)
+        let rawName = email.split('@')[0].replace(/[^a-zA-Z0-9]/g, ' ');
+        let nameParts = rawName.split(' ').filter(p => p.length > 0);
+        if(nameParts.length === 0) nameParts = ["User"];
+        
+        let firstName = nameParts[0].charAt(0).toUpperCase() + nameParts[0].slice(1).toLowerCase();
+        let fullName = nameParts.map(p => p.charAt(0).toUpperCase() + p.slice(1).toLowerCase()).join(' ');
+        
+        // Get initials (up to 2 chars)
+        let initials = nameParts.length > 1 
+            ? (nameParts[0][0] + nameParts[1][0]).toUpperCase()
+            : firstName.substring(0, 2).toUpperCase();
+
+        // Update elements
+        const spEmail = document.querySelector('.sp-email');
+        if (spEmail) spEmail.textContent = email;
+
+        const spName = document.querySelector('.sp-name');
+        if (spName) {
+            // Append role if needed based on the page we are on
+            if(document.body.innerHTML.includes('Admin Profile')) {
+                spName.textContent = fullName + ' (Admin)';
+            } else {
+                spName.textContent = fullName;
+            }
+        }
+
+        const spAvatar = document.querySelector('.sp-avatar');
+        if (spAvatar) spAvatar.textContent = initials;
+
+        const topbarAvatar = document.querySelector('.topbar-avatar');
+        if (topbarAvatar) topbarAvatar.textContent = initials;
+
+        const topbarName = document.querySelector('.topbar-user span');
+        if (topbarName) topbarName.textContent = firstName;
+
+        const welcomeTitle = document.querySelector('.page-title');
+        if (welcomeTitle && welcomeTitle.textContent.includes('Welcome')) {
+            // Some dashboards might say "Platform Overview", only update if it has Welcome
+            if(welcomeTitle.textContent.includes('back')) {
+                welcomeTitle.textContent = `Welcome back, ${firstName}!`;
+            }
+        }
+    }
+});
+</script>
+</body>
+
+</html>

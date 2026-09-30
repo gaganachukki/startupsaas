@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - STACKLY</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <a href="index.html" style="position: absolute; top: 24px; left: 24px; display: flex; align-items: center; gap: 8px; color: var(--text-main); font-weight: 600; text-decoration: none; padding: 10px 20px; background: white; border-radius: var(--radius-full); box-shadow: var(--shadow-md); z-index: 100; transition: transform 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'"><i class="fa-solid fa-arrow-left"></i> Back to Home</a>
+
+    
+
+    <style>
+      .login-container { display: flex; min-height: 100vh; margin-top: 0; }
+      .login-visual { flex: 1; background: var(--bg-light); display: flex; align-items: center; justify-content: center; padding: 40px; }
+      .login-form-area { flex: 1; display: flex; align-items: center; justify-content: center; padding: 40px; }
+      .login-box { width: 100%; max-width: 400px; }
+      .form-control { width: 100%; padding: 14px 16px; border: 1px solid #e2e8f0; border-radius: var(--radius-sm); outline: none; margin-bottom: 20px; }
+      .password-wrapper { position: relative; }
+      .toggle-password { position: absolute; right: 16px; top: 16px; cursor: pointer; color: var(--text-light); }
+      .role-toggle { display: flex; background: #f1f5f9; border-radius: var(--radius-sm); padding: 4px; margin-bottom: 24px; }
+      .role-btn { flex: 1; text-align: center; padding: 10px; font-weight: 600; cursor: pointer; border-radius: 4px; color: var(--text-light); transition: var(--transition); }
+      .role-btn.active { background: white; color: var(--primary); box-shadow: var(--shadow-sm); }
+      @media (max-width: 768px) { .login-visual { display: none; } }
+    </style>
+    <div class="login-container fade-in">
+        <div class="login-visual">
+            <div style="text-align: center;">
+                <h2 style="font-size: 2.5rem; margin-bottom: 16px;">Welcome to STACKLY</h2>
+                <p style="color: var(--text-light);">The all-in-one platform for modern startups.</p>
+                <img src="assets/dashboard.webp" alt="Dashboard" style="margin-top: 40px; border-radius: var(--radius-md); box-shadow: var(--shadow-lg);">
+            </div>
+        </div>
+        <div class="login-form-area">
+            <div class="login-box">
+                <h2 style="font-size: 2rem; margin-bottom: 8px;">Create Account</h2>
+                <p style="color: var(--text-light); margin-bottom: 24px;">Join STACKLY and start building today.</p>
+                
+                <div class="role-toggle">
+                    <div class="role-btn active" id="btnUser" onclick="setRole('user')">User</div>
+                    <div class="role-btn" id="btnAdmin" onclick="setRole('admin')">Admin</div>
+                </div>
+
+                <form id="loginForm">
+                    <input type="text" class="form-control" placeholder="Full Name" required>
+                    <input type="email" class="form-control" placeholder="Email Address" required>
+                    <div class="password-wrapper">
+                        <input type="password" id="password" class="form-control" placeholder="Create Password" required>
+                        <i class="fa-solid fa-eye toggle-password" id="togglePassword"></i>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 32px; font-size: 0.9rem;">
+                        <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+                            <input type="checkbox" required> I agree to the <a href="404.html" style="color: var(--primary);">Terms & Conditions</a>
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Sign Up</button>
+                </form>
+                <p style="text-align: center; margin-top: 32px; color: var(--text-light);">
+                    Already have an account? <a href="login.html" style="color: var(--primary); font-weight: 600;">Login</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+<script>
+function setRole(role) {
+  document.getElementById('btnUser').classList.remove('active');
+  document.getElementById('btnAdmin').classList.remove('active');
+  if (role === 'user') {
+    document.getElementById('btnUser').classList.add('active');
+  } else {
+    document.getElementById('btnAdmin').classList.add('active');
+  }
+}
+</script>
+</html>
+<script src="js/form.js"></script>
+</html>
+</body>
+<script>
+document.getElementById('loginForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const email = e.target.querySelector('input[type="email"]').value;
+  if(email) localStorage.setItem('stacklyUserEmail', email);
+
+  if (document.getElementById('btnUser').classList.contains('active')) {
+    window.location.href = 'userdashboard.html';
+  } else {
+    window.location.href = 'admindashboard.html';
+  }
+});
+</script>
+</html>

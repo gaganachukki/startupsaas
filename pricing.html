@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STACKLY - Pricing</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <header class="header" id="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo"><img src="assets/logo.webp" alt="Stackly Logo" style="height: 40px; width: auto; object-fit: contain;"></a>
+            <nav class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="pricing.html" class="nav-link">Pricing</a>
+                <a href="blog.html" class="nav-link">Blog</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="login.html" class="btn btn-primary mobile-login-btn">Login</a>
+            </nav>
+            <div class="nav-actions">
+                <div class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+                <div class="magnetic-wrap"><a href="login.html" class="btn btn-primary btn-sm magnetic-btn">Login</a></div>
+                <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+            </div>
+        </div>
+    </header>
+
+    <div class="page-banner" style="padding-top: 220px; padding-bottom: 120px; position: relative; color: white;">
+        <img src="assets/hero-pricing.webp" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2;">
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(30,27,75,0.85) 0%, rgba(92,67,246,0.7) 100%); z-index: -1;"></div>
+        <div id="particles-js" class="particles-js"></div>
+        <div class="container">
+            <h1 class="reveal-text" style="color: white; font-size: 4rem;">Transparent Pricing</h1>
+            <p class="fade-in" style="color: rgba(255,255,255,0.9); font-size: 1.25rem;">Start small. Scale when you're ready.</p>
+        </div>
+    </div>
+    
+    <!-- (Existing) Cards -->
+    <section class="container" style="margin-top: 60px;">
+        <div class="grid stagger-group" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+            <div class="stagger-item" style="border: 1px solid #e2e8f0; border-radius: var(--radius-lg); padding: 40px; text-align: center;"><h3>BASIC</h3><div style="font-size: 3rem; font-weight: 700; color: var(--secondary); margin: 24px 0;">$19</div><a href="404.html" class="btn btn-secondary" style="width: 100%;">Get Started</a></div>
+            <div class="stagger-item" style="border: 2px solid var(--primary); border-radius: var(--radius-lg); padding: 40px; text-align: center; box-shadow: var(--shadow-lg);"><h3>PREMIUM</h3><div style="font-size: 3rem; font-weight: 700; color: var(--secondary); margin: 24px 0;">$49</div><a href="404.html" class="btn btn-primary" style="width: 100%;">Start Free Trial</a></div>
+            <div class="stagger-item" style="border: 1px solid #e2e8f0; border-radius: var(--radius-lg); padding: 40px; text-align: center;"><h3>ENTERPRISE</h3><div style="font-size: 3rem; font-weight: 700; color: var(--secondary); margin: 24px 0;">Custom</div><a href="contact.html" class="btn btn-secondary" style="width: 100%;">Contact Sales</a></div>
+        </div>
+    </section>
+
+    <!-- NEW 1: Cost Calculator -->
+    <section style="background: var(--bg-light); padding: 100px 0; margin-top: 100px;">
+        <div class="container fade-in">
+            <div class="section-header"><h2 class="reveal-text">Estimate Your Cost</h2></div>
+            <div class="slider-container">
+                <h3 style="margin-bottom: 20px;">How many active users?</h3>
+                <div style="font-size: 2rem; color: var(--primary); font-weight: 700;" id="userCount">10</div>
+                <input type="range" min="1" max="500" value="10" class="range-slider" id="userSlider">
+                <p style="color: var(--text-light); margin-top: 20px;">Estimated Monthly Cost (Premium):</p>
+                <div style="font-size: 3rem; color: var(--secondary); font-weight: 800; margin-top: 10px;" id="calcPrice">$120</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW 2: Add-ons -->
+    <section class="container fade-in" style="margin-top: 100px;">
+        <div class="section-header"><h2 class="reveal-text">Optional Add-ons</h2></div>
+        <div class="grid stagger-group" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+            <div class="stagger-item" style="padding: 24px; border: 1px solid #f1f5f9; border-radius: var(--radius-md); box-shadow: var(--shadow-sm);">
+                <h4>Extra Storage (+1TB)</h4>
+                <p style="color: var(--primary); font-weight: 600; margin: 10px 0;">$15 / month</p>
+                <p style="color: var(--text-light); font-size: 0.9rem;">Expand your workspace file limits.</p>
+            </div>
+            <div class="stagger-item" style="padding: 24px; border: 1px solid #f1f5f9; border-radius: var(--radius-md); box-shadow: var(--shadow-sm);">
+                <h4>Advanced Security Pack</h4>
+                <p style="color: var(--primary); font-weight: 600; margin: 10px 0;">$99 / month</p>
+                <p style="color: var(--text-light); font-size: 0.9rem;">SAML SSO, custom data retention rules.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW 3: Startups Program -->
+    <section class="container fade-in" style="margin-top: 100px; text-align: center;">
+        <div style="background: var(--gradient-main); padding: 60px; border-radius: var(--radius-lg); color: white;">
+            <h2 class="reveal-text" style="color: white;">Backed by an Accelerator?</h2>
+            <p style="margin: 20px auto 30px; max-width: 600px; color: rgba(255,255,255,0.9);">Eligible startups from YC, Techstars, and 50+ partners get up to $50,000 in STACKLY credits.</p>
+            <div class="magnetic-wrap"><a href="404.html" class="btn btn-secondary magnetic-btn" style="background: white; color: var(--primary);">Apply for Startup Program</a></div>
+        </div>
+    </section>
+
+    <!-- NEW 4: Money-Back Guarantee -->
+    <section class="container text-center fade-in" style="margin-top: 100px;">
+        <i class="fa-solid fa-handshake-angle fa-4x" style="color: var(--primary); margin-bottom: 20px;"></i>
+        <h2 class="reveal-text">30-Day Money Back Guarantee</h2>
+        <p style="color: var(--text-light); max-width: 600px; margin: 20px auto;">Try Premium entirely risk-free. If you don't love how it transforms your workflow, we'll refund 100% of your payment.</p>
+    </section>
+
+    <!-- NEW 5: Case Study ROI -->
+    <section style="background: var(--bg-light); padding: 80px 0; margin-top: 100px; margin-bottom: 100px;">
+        <div class="container feature-block fade-in" style="margin-bottom: 0;">
+            <div class="feature-img scale-up" style="background: white; padding: 40px; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm);">
+                <div style="font-size: 4rem; color: var(--primary); font-weight: 800;">$50k</div>
+                <p style="font-weight: 600; color: var(--secondary);">Saved Annually</p>
+            </div>
+            <div class="feature-text">
+                <h3 class="reveal-text">Acme Corp's Switch</h3>
+                <p style="color: var(--text-light); margin-top: 20px;">By consolidating 4 different SaaS tools into our Enterprise plan, Acme Corp eliminated redundant licensing and saved over $50,000 in their first year.</p>
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- ADDITION 1: Competitor Comparison Table -->
+    <section class="container fade-in" style="margin-top: 100px;">
+        <div class="section-header">
+            <h2 class="reveal-text">STACKLY vs The Rest</h2>
+            <p>Why pay for 4 different tools when one does it better?</p>
+        </div>
+        <div class="table-responsive">
+            <table class="vs-table">
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th class="vs-highlight" style="background: var(--primary); color: white;">STACKLY</th>
+                        <th>Jira + Confluence</th>
+                        <th>Asana + Mixpanel</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Project Management</td>
+                        <td class="vs-highlight"><i class="fa-solid fa-check"></i> Built-in</td>
+                        <td><i class="fa-solid fa-check"></i> Built-in</td>
+                        <td><i class="fa-solid fa-check"></i> Built-in</td>
+                    </tr>
+                    <tr>
+                        <td>Advanced Product Analytics</td>
+                        <td class="vs-highlight"><i class="fa-solid fa-check"></i> Built-in</td>
+                        <td><i class="fa-solid fa-xmark" style="color: #cbd5e1;"></i> Requires plugin</td>
+                        <td><i class="fa-solid fa-check"></i> Built-in</td>
+                    </tr>
+                    <tr>
+                        <td>Average Monthly Cost (100 users)</td>
+                        <td class="vs-highlight">$4,900</td>
+                        <td>$8,500</td>
+                        <td>$11,200</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- ADDITION 2: Horizontal Scroll ROI Timeline -->
+    <div class="pin-wrap-container fade-in" style="background: #1e1b4b;">
+        <div class="pin-wrap">
+            <div style="display:flex; align-items:center; width: 400px;"><h2 style="font-size: 4rem; color: white;">The ROI<br>Timeline.</h2></div>
+            <div class="horiz-card" style="background: #312e81; border: none;">
+                <h3 style="color: #a5b4fc; font-size: 1.5rem; margin-bottom: 20px;">Month 1: Consolidation</h3>
+                <p style="color: white; font-size: 1.1rem; line-height: 1.6;">Cancel redundant subscriptions. Migrate data into STACKLY. Immediate savings on software licenses.</p>
+            </div>
+            <div class="horiz-card" style="background: #3730a3; border: none;">
+                <h3 style="color: #a5b4fc; font-size: 1.5rem; margin-bottom: 20px;">Month 3: Velocity</h3>
+                <p style="color: white; font-size: 1.1rem; line-height: 1.6;">Teams stop context-switching between tabs. Engineering velocity increases by 25%.</p>
+            </div>
+            <div class="horiz-card" style="background: #4338ca; border: none;">
+                <h3 style="color: #a5b4fc; font-size: 1.5rem; margin-bottom: 20px;">Month 6: Break Even</h3>
+                <p style="color: white; font-size: 1.1rem; line-height: 1.6;">The efficiency gains completely cover the annual cost of the STACKLY enterprise plan.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ADDITION 3: Non-Profit / Education Tier -->
+    <section class="container fade-in" style="margin-top: 100px;">
+        <div style="border-left: 4px solid #10b981; background: #f0fdf4; padding: 40px; border-radius: 0 var(--radius-lg) var(--radius-lg) 0;">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
+                <div>
+                    <h3 style="color: #065f46; font-size: 1.5rem;">Education & Non-Profits</h3>
+                    <p style="color: #047857; margin-top: 10px;">We believe in supporting those who support others. Get 50% off all plans.</p>
+                </div>
+                <button class="btn-primary" style="background: #10b981;" onclick="window.location.href='404.html'">Apply for Discount</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ADDITION 4: Custom Quoting Teaser -->
+    <section class="container fade-in" style="margin-top: 100px; text-align: center;">
+        <div class="tilt-card" style="display: inline-block; text-align: left; max-width: 600px;">
+            <div class="tilt-inner">
+                <h3 style="margin-bottom: 16px;">Need more than 500 seats?</h3>
+                <p style="color: var(--text-light); margin-bottom: 24px;">Volume discounts trigger automatically for massive teams. Let's talk numbers.</p>
+                <a href="contact.html" style="color: var(--primary); font-weight: 600;">Contact Sales Team <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ADDITION 5: Pricing FAQ Interactive Tabs (CSS-only hack or stylized grid) -->
+    <section style="background: var(--bg-light); padding: 80px 0; margin-top: 100px; margin-bottom: 100px;">
+        <div class="container fade-in">
+            <h2 class="reveal-text" style="text-align: center; margin-bottom: 40px;">Billing Details</h2>
+            <div class="grid stagger-group" style="grid-template-columns: 1fr 1fr; gap: 30px;">
+                <div class="stagger-item" style="background: white; padding: 30px; border-radius: var(--radius-md);">
+                    <h4>What happens if I go over my API limit?</h4>
+                    <p style="color: var(--text-light); margin-top: 10px; font-size: 0.9rem;">We never hard-cap your production traffic. We will soft-alert you and bill a standard overage rate of $0.05/1k requests at the end of the month.</p>
+                </div>
+                <div class="stagger-item" style="background: white; padding: 30px; border-radius: var(--radius-md);">
+                    <h4>How do you handle prorated seats?</h4>
+                    <p style="color: var(--text-light); margin-top: 10px; font-size: 0.9rem;">If you add an engineer mid-month, you are only billed for the exact number of days they were active in the workspace.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer new-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="footer-logo"><img src="assets/logo.webp" alt="Stackly Logo" style="height: 36px; width: auto; object-fit: contain; margin-bottom: 8px;"></a>
+                    <p class="footer-desc">Premium SaaS workflow platform delivering robust culinary-level coding experiences right to your startup. Your growth, our expertise.</p>
+                    <div class="footer-socials">
+                        <a href="404.html"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="404.html"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="404.html"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="404.html"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html">Project Management</a></li>
+                        <li><a href="services.html">Advanced Analytics</a></li>
+                        <li><a href="services.html">Cloud Automation</a></li>
+                        <li><a href="services.html">Enterprise Security</a></li>
+                        <li><a href="services.html">API Integrations</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <ul class="contact-info">
+                        <li>hello@stackly.com</li>
+                        <li>+91 98765 43210</li>
+                        <li>Salem, Tamil Nadu</li>
+                        <li>Mon - Fri: 9AM - 6PM</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="copy">&copy; 2026 Stackly. All rights reserved.</div>
+                <div class="legal-links">
+                    <a href="404.html">Privacy Policy</a>
+                    <a href="404.html">Terms of Service</a>
+                    <a href="404.html">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+        
+        <a href="#header" class="back-to-top"><i class="fa-solid fa-chevron-up"></i></a>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/form.js"></script>
+</body>
+</html>

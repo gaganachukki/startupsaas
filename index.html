@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STACKLY - Home</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <header class="header" id="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo"><img src="assets/logo.webp" alt="Stackly Logo" style="height: 40px; width: auto; object-fit: contain;"></a>
+            <nav class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="pricing.html" class="nav-link">Pricing</a>
+                <a href="blog.html" class="nav-link">Blog</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="login.html" class="btn btn-primary mobile-login-btn">Login</a>
+            </nav>
+            <div class="nav-actions">
+                <div class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+                <div class="magnetic-wrap"><a href="login.html" class="btn btn-primary btn-sm magnetic-btn">Login</a></div>
+                <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero page-banner" style="padding: 180px 0 100px; background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);">
+        <div id="particles-js" class="particles-js"></div>
+        <div class="container hero-container" style="display:flex; gap:60px; align-items:center;">
+            <div class="hero-content" style="flex:1;">
+                <div class="badge fade-in"><i class="fa-solid fa-rocket"></i> Build • Grow • Scale</div>
+                <h1 class="hero-title reveal-text" style="font-size: 4.5rem; margin-bottom: 24px; letter-spacing: -1px;">The All-in-One <span class="text-gradient">Startup SaaS</span> Platform</h1>
+                <p class="hero-desc fade-in" style="font-size: 1.25rem; color: var(--text-light); margin-bottom: 32px; max-width: 540px;">Turn your ideas into real products. STACKLY provides the tools, insights and collaboration features you need to build, manage and scale your startup.</p>
+                <div class="hero-btns fade-in" style="display:flex; gap:16px; margin-bottom: 32px;">
+                    <div class="magnetic-wrap"><a href="pricing.html" class="btn btn-primary magnetic-btn">Get Started Free</a></div>
+                    <div class="magnetic-wrap"><a href="404.html" class="btn btn-secondary magnetic-btn"><i class="fa-solid fa-play"></i> Watch Demo</a></div>
+                </div>
+            </div>
+            <div class="hero-visual scale-up" style="flex:1; position: relative;">
+                <style>
+                    .hero-slideshow {
+                        position: relative;
+                        width: 100%;
+                        aspect-ratio: 4/3;
+                        border-radius: var(--radius-lg);
+                        box-shadow: var(--shadow-float);
+                        overflow: hidden;
+                    }
+                    .hero-slideshow img {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        opacity: 0;
+                        animation: heroFade 15s infinite ease-in-out;
+                    }
+                    .hero-slideshow img:nth-child(1) { animation-delay: 0s; }
+                    .hero-slideshow img:nth-child(2) { animation-delay: 5s; }
+                    .hero-slideshow img:nth-child(3) { animation-delay: 10s; }
+                    
+                    @keyframes heroFade {
+                        0%   { opacity: 0; transform: scale(1.05); }
+                        10%  { opacity: 1; transform: scale(1); }
+                        33%  { opacity: 1; transform: scale(1); }
+                        43%  { opacity: 0; transform: scale(1.05); }
+                        100% { opacity: 0; transform: scale(1.05); }
+                    }
+                </style>
+                <div class="hero-slideshow">
+                    <img src="assets/hero-home.webp" alt="STACKLY Platform">
+                    <img src="assets/dashboard.webp" alt="Data Analytics">
+                    <img src="assets/startup-hero.webp" alt="Team Collaboration">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW 1: Infinite Marquee -->
+    <div class="marquee-container">
+        <div class="marquee-content">
+            <div class="marquee-item"><i class="fa-solid fa-bolt"></i> Real-Time Collaboration</div>
+            <div class="marquee-item"><i class="fa-solid fa-bolt"></i> Advanced Analytics</div>
+            <div class="marquee-item"><i class="fa-solid fa-bolt"></i> Enterprise Security</div>
+            <div class="marquee-item"><i class="fa-solid fa-bolt"></i> Automated Workflows</div>
+            <div class="marquee-item"><i class="fa-solid fa-bolt"></i> 100+ Integrations</div>
+            <!-- Repeat for loop -->
+            <div class="marquee-item"><i class="fa-solid fa-bolt"></i> Real-Time Collaboration</div>
+            <div class="marquee-item"><i class="fa-solid fa-bolt"></i> Advanced Analytics</div>
+            <div class="marquee-item"><i class="fa-solid fa-bolt"></i> Enterprise Security</div>
+            <div class="marquee-item"><i class="fa-solid fa-bolt"></i> Automated Workflows</div>
+            <div class="marquee-item"><i class="fa-solid fa-bolt"></i> 100+ Integrations</div>
+        </div>
+    </div>
+
+    <!-- NEW 2: ROI Metrics -->
+    <section class="container fade-in" style="margin-top: 100px;">
+        <div style="background: white; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); display: flex; flex-wrap: wrap; border: 1px solid #f1f5f9;">
+            <div class="roi-box" style="flex: 1; min-width: 250px;">
+                <div class="roi-number">20h</div>
+                <p style="color: var(--text-light); font-weight: 500;">Saved per week on average</p>
+            </div>
+            <div class="roi-box" style="flex: 1; min-width: 250px;">
+                <div class="roi-number">30%</div>
+                <p style="color: var(--text-light); font-weight: 500;">Increase in team output</p>
+            </div>
+            <div class="roi-box" style="flex: 1; min-width: 250px;">
+                <div class="roi-number">99.9%</div>
+                <p style="color: var(--text-light); font-weight: 500;">Platform Uptime SLA</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW 3: Interactive Demo Video Trigger -->
+    <section class="container fade-in" style="margin-top: 100px; text-align: center;">
+        <div class="section-header">
+            <h2 class="reveal-text">See STACKLY in action</h2>
+            <p>Watch how easy it is to manage your entire startup from one dashboard.</p>
+        </div>
+        <div class="parallax-wrap" style="max-width: 900px; margin: 0 auto; height: 500px; display: flex; align-items: center; justify-content: center; border: 1px solid #e2e8f0; background: var(--secondary);">
+            <img src="assets/index-feature.webp" class="parallax-img" style="position: absolute; opacity: 0.5;">
+            <div class="magnetic-wrap" style="position: relative; z-index: 2;">
+                <div class="play-btn magnetic-btn" onclick="window.location.href='404.html'" style="width: 80px; height: 80px; font-size: 2rem; box-shadow: 0 0 30px rgba(92, 67, 246, 0.8); cursor: pointer;">
+                    <i class="fa-solid fa-play" style="margin-left: 5px;"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW 4: Quick Start Guide -->
+    <section class="container fade-in" style="margin-top: 100px;">
+        <div class="section-header">
+            <h2 class="reveal-text">Launch in 3 simple steps</h2>
+        </div>
+        <div class="grid stagger-group" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; text-align: center;">
+            <div class="stagger-item">
+                <div style="width: 60px; height: 60px; background: var(--bg-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700; color: var(--primary); margin: 0 auto 20px;">1</div>
+                <h3>Create Workspace</h3>
+                <p style="color: var(--text-light); margin-top: 10px;">Sign up and configure your startup's environment in seconds.</p>
+            </div>
+            <div class="stagger-item">
+                <div style="width: 60px; height: 60px; background: var(--bg-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700; color: var(--primary); margin: 0 auto 20px;">2</div>
+                <h3>Invite Your Team</h3>
+                <p style="color: var(--text-light); margin-top: 10px;">Bring engineers, marketers, and founders into one unified hub.</p>
+            </div>
+            <div class="stagger-item">
+                <div style="width: 60px; height: 60px; background: var(--bg-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700; color: var(--primary); margin: 0 auto 20px;">3</div>
+                <h3>Start Shipping</h3>
+                <p style="color: var(--text-light); margin-top: 10px;">Use our templates to immediately start building and tracking.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW 5: Masonry Testimonials -->
+    <section style="background: var(--bg-light); padding: 100px 0; margin-top: 100px;">
+        <div class="container fade-in">
+            <div class="section-header">
+                <h2 class="reveal-text">Loved by founders</h2>
+            </div>
+            <div class="testimonial-grid stagger-group">
+                <div class="testimonial-card stagger-item">
+                    <p style="color: var(--text-main); font-size: 1.1rem; font-style: italic;">"STACKLY completely changed how we operate. We replaced Slack, and Mixpanel with this one tool."</p>
+                    <div class="testimonial-author">
+                        <img src="assets/ai6.webp" class="author-avatar" alt="Jane Doe" style="object-fit: cover;">
+                        <div><strong>Jane Doe</strong><br><span style="color: var(--text-light); font-size: 0.85rem;">CEO, TechFlow</span></div>
+                    </div>
+                </div>
+                <div class="testimonial-card stagger-item">
+                    <p style="color: var(--text-main); font-size: 1.1rem; font-style: italic;">"The analytics are mind-blowing. I can see my MRR, churn, and team productivity in a single dashboard."</p>
+                    <div class="testimonial-author">
+                        <img src="assets/ai7.webp" class="author-avatar" alt="John Smith" style="object-fit: cover;">
+                        <div><strong>John Smith</strong><br><span style="color: var(--text-light); font-size: 0.85rem;">Founder, DevSync</span></div>
+                    </div>
+                </div>
+                <div class="testimonial-card stagger-item">
+                    <p style="color: var(--text-main); font-size: 1.1rem; font-style: italic;">"Setup took literally 5 minutes. The fastest onboarding I've ever seen for an enterprise tool."</p>
+                    <div class="testimonial-author">
+                        <img src="assets/aio.webp" class="author-avatar" alt="Alice Cooper" style="object-fit: cover;">
+                        <div><strong>Alice Cooper</strong><br><span style="color: var(--text-light); font-size: 0.85rem;">CTO, BlockChain Inc</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- NEW HOME SECTION 1: Integration Orbit -->
+    <section class="container fade-in" style="margin-top: 100px; margin-bottom: 150px; text-align: center; position: relative;">
+        <h2 class="reveal-text">The Center of Your Universe</h2>
+        <p style="color: var(--text-light); margin-bottom: 80px;">STACKLY integrates natively with the tools you already love.</p>
+        <div style="position: relative; height: 400px;">
+            <div class="orbit-center"><i class="fa-solid fa-layer-group"></i></div>
+            <div class="orbit-wrap">
+                <div class="orbit-icon icon-1"><i class="fa-brands fa-github"></i></div>
+                <div class="orbit-icon icon-2"><i class="fa-brands fa-slack"></i></div>
+                <div class="orbit-icon icon-3"><i class="fa-brands fa-jira"></i></div>
+                <div class="orbit-icon icon-4"><i class="fa-brands fa-aws"></i></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW HOME SECTION 2: Code to Cloud Vertical Line -->
+    <section class="container fade-in" style="margin-top: 100px;">
+        <div class="section-header">
+            <h2 class="reveal-text">From Idea to Production</h2>
+        </div>
+        <div class="scroll-path-wrap">
+            <div class="scroll-line-bg"></div>
+            <div class="scroll-line-fill"></div>
+            
+            <div style="width: 100%;">
+                <div class="path-step fade-in">
+                    <div class="path-dot">1</div>
+                    <h3>Ideation & Planning</h3>
+                    <p style="color: var(--text-light); margin-top: 10px;">Use our collaborative boards to sketch out the architecture and assign tickets to the engineering team seamlessly.</p>
+                </div>
+                <div class="path-step fade-in">
+                    <div class="path-dot">2</div>
+                    <h3>Development Sync</h3>
+                    <p style="color: var(--text-light); margin-top: 10px;">Connect your GitHub repository. As PRs are merged, STACKLY automatically updates ticket statuses and notifies QA.</p>
+                </div>
+                <div class="path-step fade-in">
+                    <div class="path-dot">3</div>
+                    <h3>Deployment & Analytics</h3>
+                    <p style="color: var(--text-light); margin-top: 10px;">Once live, our embedded analytics dashboard tracks user engagement and API load in real-time.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW HOME SECTION 3: Before/After Slider -->
+    <section class="container fade-in" style="margin-top: 100px; text-align: center;">
+        <h2 class="reveal-text">See the Difference</h2>
+        <p style="color: var(--text-light); margin-bottom: 40px;">Stop drowning in chaotic spreadsheets and fragmented tools.</p>
+        <div class="ba-slider tilt-card" style="padding: 0;">
+            <div class="ba-before" style="background-image: url('assets/slider-messy.webp');">Messy</div>
+            <div class="ba-after" style="background-image: url('assets/slider-organized.webp');">Organized</div>
+            <div class="ba-handle"><i class="fa-solid fa-arrows-left-right"></i></div>
+        </div>
+        <p style="color: var(--text-light); font-size: 0.85rem; margin-top: 20px;"><i class="fa-solid fa-hand-pointer"></i> Drag the slider to compare</p>
+    </section>
+
+    <!-- NEW HOME SECTION 4: Live Command Menu Auto-Typer -->
+    <section class="container fade-in" style="margin-top: 100px;">
+        <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;">
+            <div>
+                <div class="badge">POWER USERS</div>
+                <h2 class="reveal-text" style="margin: 16px 0;">Built for Speed (⌘K)</h2>
+                <p style="color: var(--text-light); font-size: 1.1rem; line-height: 1.6;">Don't want to use the mouse? Neither do we. STACKLY features a global command menu and a robust CLI that lets you trigger deployments, pull reports, and assign tasks directly from your keyboard.</p>
+            </div>
+            <div class="tilt-card" style="background: #0f172a; border-radius: var(--radius-lg); padding: 30px; font-family: 'Courier New', Courier, monospace; color: #38bdf8; box-shadow: 0 20px 40px rgba(0,0,0,0.3); border: 1px solid #1e293b;">
+                <div style="display: flex; gap: 8px; margin-bottom: 20px;">
+                    <div style="width: 12px; height: 12px; background: #ef4444; border-radius: 50%;"></div>
+                    <div style="width: 12px; height: 12px; background: #8b5cf6; border-radius: 50%;"></div>
+                    <div style="width: 12px; height: 12px; background: #22c55e; border-radius: 50%;"></div>
+                </div>
+                <div style="font-size: 1.1rem; line-height: 1.5;">
+                    <span style="color: #10b981;">admin@stackly</span>:<span style="color: #3b82f6;">~/project</span> $ <span id="typer"></span><span class="term-cursor">_</span>
+                </div>
+                <div id="type-output" style="color: #94a3b8; margin-top: 15px; min-height: 60px; font-size: 1rem; line-height: 1.5;"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW HOME SECTION 5: Animated Growth Chart -->
+    <section class="container fade-in" style="margin-top: 100px; margin-bottom: 100px; text-align: center;">
+        <h2 class="reveal-text">Scale Without Limits</h2>
+        <p style="color: var(--text-light); margin: 20px auto 60px; max-width: 600px;">Our infrastructure handles the heavy lifting so your revenue curve can keep pointing up and to the right.</p>
+        <div class="chart-container">
+            <div class="chart-bar" style="--target-height: 20%; background: #c7d2fe;" data-label="Q1" data-val="$10k"></div>
+            <div class="chart-bar" style="--target-height: 45%; background: #818cf8;" data-label="Q2" data-val="$45k"></div>
+            <div class="chart-bar" style="--target-height: 70%; background: #4f46e5;" data-label="Q3" data-val="$92k"></div>
+            <div class="chart-bar" style="--target-height: 95%; background: #10b981; box-shadow: 0 0 20px rgba(16,185,129,0.4);" data-label="Q4" data-val="$150k"></div>
+        </div>
+    </section>
+
+    <section class="final-cta text-center" style="background: white; padding: 120px 0;">
+        <div class="container fade-in">
+            <h2 class="reveal-text" style="font-size: 3rem; margin-bottom: 24px;">Ready to build your next big thing?</h2>
+            <p style="color: var(--text-light); font-size: 1.25rem; margin-bottom: 40px; max-width: 600px; margin-inline: auto;">Start building, collaborating and scaling with STACKLY today.</p>
+            <div style="display: flex; gap: 16px; justify-content: center;">
+                <div class="magnetic-wrap"><a href="pricing.html" class="btn btn-primary magnetic-btn">Get Started Free</a></div>
+            </div>
+        </div>
+    </section>
+
+        <footer class="footer new-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="footer-logo"><img src="assets/logo.webp" alt="Stackly Logo" style="height: 36px; width: auto; object-fit: contain; margin-bottom: 8px;"></a>
+                    <p class="footer-desc">Premium SaaS workflow platform delivering robust culinary-level coding experiences right to your startup. Your growth, our expertise.</p>
+                    <div class="footer-socials">
+                        <a href="404.html"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="404.html"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="404.html"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="404.html"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html">Project Management</a></li>
+                        <li><a href="services.html">Advanced Analytics</a></li>
+                        <li><a href="services.html">Cloud Automation</a></li>
+                        <li><a href="services.html">Enterprise Security</a></li>
+                        <li><a href="services.html">API Integrations</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <ul class="contact-info">
+                        <li>hello@stackly.com</li>
+                        <li>+91 98765 43210</li>
+                        <li>Salem, Tamil Nadu</li>
+                        <li>Mon - Fri: 9AM - 6PM</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="copy">&copy; 2026 Stackly. All rights reserved.</div>
+                <div class="legal-links">
+                    <a href="404.html">Privacy Policy</a>
+                    <a href="404.html">Terms of Service</a>
+                    <a href="404.html">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+        
+        <a href="#header" class="back-to-top"><i class="fa-solid fa-chevron-up"></i></a>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/form.js"></script>
+</body>
+</html>

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STACKLY - Contact</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <header class="header" id="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo"><img src="assets/logo.webp" alt="Stackly Logo" style="height: 40px; width: auto; object-fit: contain;"></a>
+            <nav class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="pricing.html" class="nav-link">Pricing</a>
+                <a href="blog.html" class="nav-link">Blog</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="login.html" class="btn btn-primary mobile-login-btn">Login</a>
+            </nav>
+            <div class="nav-actions">
+                <div class="search-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+                <div class="magnetic-wrap"><a href="login.html" class="btn btn-primary btn-sm magnetic-btn">Login</a></div>
+                <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+            </div>
+        </div>
+    </header>
+
+    <div class="page-banner" style="padding-top: 220px; padding-bottom: 120px; position: relative; color: white;">
+        <img src="assets/hero-contact.webp" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2;">
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(30,27,75,0.85) 0%, rgba(92,67,246,0.7) 100%); z-index: -1;"></div>
+        <div id="particles-js" class="particles-js"></div>
+        <div class="container">
+            <h1 class="reveal-text" style="color: white; font-size: 4rem;">Contact STACKLY</h1>
+            <p class="fade-in" style="color: rgba(255,255,255,0.9); font-size: 1.25rem;">Let's build something great together.</p>
+        </div>
+    </div>
+    
+    <!-- (Existing) Main Form -->
+    <section class="container fade-in" style="margin-top: 60px;">
+        <div class="grid" style="grid-template-columns: 1fr 2fr; gap: 60px;">
+            <div>
+    <h3 class="reveal-text" style="margin-bottom: 20px; font-size: 2.2rem;">Get in Touch</h3>
+    <p style="color: var(--text-light); margin-bottom: 40px; font-size: 1.1rem; line-height: 1.6;">Have questions about our platform or need support? Our team is always here to help you build something great.</p>
+    
+    <div style="display: flex; flex-direction: column; gap: 30px;">
+        <div class="fade-in" style="display: flex; gap: 20px; align-items: flex-start;">
+            <div style="width: 50px; height: 50px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 1.2rem; flex-shrink: 0; transition: transform 0.3s; cursor: default;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+                <i class="fa-solid fa-envelope"></i>
+            </div>
+            <div>
+                <h4 style="margin: 0 0 4px 0; font-size: 1.1rem;">Email Us</h4>
+                <p style="color: var(--text-light); margin: 0;">hello@stackly.com<br>support@stackly.com</p>
+            </div>
+        </div>
+        
+        <div class="fade-in" style="display: flex; gap: 20px; align-items: flex-start; transition-delay: 0.1s;">
+            <div style="width: 50px; height: 50px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 1.2rem; flex-shrink: 0; transition: transform 0.3s; cursor: default;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+                <i class="fa-solid fa-phone"></i>
+            </div>
+            <div>
+                <h4 style="margin: 0 0 4px 0; font-size: 1.1rem;">Call Us</h4>
+                <p style="color: var(--text-light); margin: 0;">+91 98765 43210<br>Mon-Fri, 9am-6pm IST</p>
+            </div>
+        </div>
+
+        <div class="fade-in" style="display: flex; gap: 20px; align-items: flex-start; transition-delay: 0.2s;">
+            <div style="width: 50px; height: 50px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary); font-size: 1.2rem; flex-shrink: 0; transition: transform 0.3s; cursor: default;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+                <i class="fa-solid fa-location-dot"></i>
+            </div>
+            <div>
+                <h4 style="margin: 0 0 4px 0; font-size: 1.1rem;">Headquarters</h4>
+                <p style="color: var(--text-light); margin: 0;">Tech Park, Omalur Main Road<br>Salem, Tamil Nadu<br>India 636004</p>
+            </div>
+        </div>
+    </div>
+</div>
+            <div>
+                <form id="contactForm" style="background: white; padding: 40px; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); border: 1px solid #f1f5f9;">
+                    <input type="text" placeholder="Name" style="width: 100%; padding: 14px; margin-bottom: 20px; border: 1px solid #e2e8f0; border-radius: var(--radius-sm);" required>
+                    <textarea rows="4" placeholder="Message" style="width: 100%; padding: 14px; margin-bottom: 20px; border: 1px solid #e2e8f0; border-radius: var(--radius-sm);" required></textarea>
+                    <div class="magnetic-wrap"><button type="submit" class="btn btn-primary magnetic-btn" style="width: 100%;">Send Message</button></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW 1: Department Routing -->
+    <section style="background: var(--bg-light); padding: 80px 0; margin-top: 100px;">
+        <div class="container fade-in">
+            <div class="section-header"><h2 class="reveal-text">Route Your Request</h2></div>
+            <div class="grid stagger-group" style="grid-template-columns: repeat(3, 1fr); gap: 30px;">
+                <div class="route-card stagger-item text-center">
+                    <i class="fa-solid fa-bullhorn fa-2x" style="color: var(--primary); margin-bottom: 15px;"></i>
+                    <h4>Press Inquiries</h4>
+                    <p style="color: var(--text-light); font-size: 0.9rem; margin-top: 10px;">press@stackly.com</p>
+                </div>
+                <div class="route-card stagger-item text-center">
+                    <i class="fa-solid fa-handshake fa-2x" style="color: var(--primary); margin-bottom: 15px;"></i>
+                    <h4>Partnerships</h4>
+                    <p style="color: var(--text-light); font-size: 0.9rem; margin-top: 10px;">partners@stackly.com</p>
+                </div>
+                <div class="route-card stagger-item text-center">
+                    <i class="fa-solid fa-briefcase fa-2x" style="color: var(--primary); margin-bottom: 15px;"></i>
+                    <h4>Careers</h4>
+                    <p style="color: var(--text-light); font-size: 0.9rem; margin-top: 10px;">jobs@stackly.com</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW 2: Live System Status -->
+    <section class="container fade-in" style="margin-top: 100px; text-align: center;">
+        <div style="display: inline-flex; align-items: center; gap: 15px; padding: 20px 40px; border: 1px solid #10b981; border-radius: var(--radius-full); background: rgba(16, 185, 129, 0.05);">
+            <div style="width: 15px; height: 15px; background: #10b981; border-radius: 50%; box-shadow: 0 0 10px #10b981; animation: pulse 2s infinite;"></div>
+            <h3 style="margin: 0; color: #065f46;">All Systems Operational</h3>
+        </div>
+        <style>@keyframes pulse { 0% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.2); opacity: 0.7; } 100% { transform: scale(1); opacity: 1; } }</style>
+    </section>
+
+    <!-- NEW 3: Community Forum -->
+    <section class="container fade-in" style="margin-top: 80px; text-align: center;">
+        <div style="background: var(--gradient-main); padding: 60px; border-radius: var(--radius-lg); color: white;">
+            <i class="fa-brands fa-discord fa-4x" style="margin-bottom: 20px;"></i>
+            <h2 class="reveal-text" style="color: white;">Join the Community</h2>
+            <p style="margin: 20px auto 30px; max-width: 500px; color: rgba(255,255,255,0.9);">Connect with over 5,000 founders and developers building on STACKLY.</p>
+            <div class="magnetic-wrap"><a href="404.html" class="btn btn-secondary magnetic-btn" style="background: white; color: var(--primary);">Join Discord Server</a></div>
+        </div>
+    </section>
+
+    <!-- NEW 4: Embedded Google Map -->
+    <section class="fade-in" style="margin-top: 100px; height: 450px; position: relative; width: 100%;">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125139.69176318535!2d78.07727189196328!3d11.65373307693998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3babf1ccf52cba0b%3A0xee9989007068ca47!2sSalem%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+
+    <!-- NEW 5: Response Guarantee -->
+    <section class="container text-center fade-in" style="margin-top: 100px; margin-bottom: 100px;">
+        <i class="fa-solid fa-stopwatch fa-3x" style="color: var(--primary); margin-bottom: 20px;"></i>
+        <h3 class="reveal-text">Lightning Fast Support</h3>
+        <p style="color: var(--text-light); max-width: 500px; margin: 15px auto 0;">We guarantee a response time of under 2 hours during normal business operations for all Premium and Enterprise clients.</p>
+    </section>
+
+    
+    <!-- ADDITION 1: Live Chat Support Teaser -->
+    <section class="container fade-in" style="margin-top: 100px;">
+        <div class="tilt-card" style="background: var(--primary); color: white; text-align: center; padding: 60px;">
+            <div class="tilt-inner">
+                <i class="fa-solid fa-comment-dots fa-4x" style="margin-bottom: 20px;"></i>
+                <h2 style="color: white;">Need immediate help?</h2>
+                <p style="color: rgba(255,255,255,0.9); margin-top: 10px; font-size: 1.1rem;">Click the chat bubble in the bottom right corner of your screen to speak with a human support agent instantly.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ADDITION 2: Social Media Wall Mockup -->
+    <section style="background: var(--bg-light); padding: 80px 0; margin-top: 100px;">
+        <div class="container fade-in">
+            <h2 class="reveal-text" style="text-align: center; margin-bottom: 40px;">What Founders Are Saying</h2>
+            <div class="grid stagger-group" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                <div class="stagger-item" style="background: white; padding: 24px; border-radius: var(--radius-md); box-shadow: var(--shadow-sm);">
+                    <div style="display:flex; align-items:center; gap: 10px; margin-bottom:10px;"><i class="fa-brands fa-x-twitter" style="color: #0f1419;"></i> <strong>@techfounder</strong></div>
+                    <p style="font-size: 0.95rem;">Just moved our entire engineering org to @StacklySaaS. The velocity increase is insane. 🚀</p>
+                </div>
+                <div class="stagger-item" style="background: white; padding: 24px; border-radius: var(--radius-md); box-shadow: var(--shadow-sm);">
+                    <div style="display:flex; align-items:center; gap: 10px; margin-bottom:10px;"><i class="fa-brands fa-linkedin" style="color: #0a66c2;"></i> <strong>Sarah C.</strong></div>
+                    <p style="font-size: 0.95rem;">STACKLY's new AI module just saved me 4 hours of writing release notes. Highly recommend!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ADDITION 3: Security & Bug Bounty -->
+    <section class="container fade-in" style="margin-top: 100px;">
+        <div style="border: 1px solid #e2e8f0; border-radius: var(--radius-lg); padding: 40px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px;">
+            <div>
+                <h3 style="font-size: 1.5rem; margin-bottom: 10px;"><i class="fa-solid fa-bug" style="color: var(--primary);"></i> Report a Security Vulnerability</h3>
+                <p style="color: var(--text-light);">We take security seriously. If you are a security researcher, please use our HackerOne program.</p>
+            </div>
+            <button class="btn-secondary" onclick="window.location.href='404.html'">View Bug Bounty Program</button>
+        </div>
+    </section>
+
+    <!-- ADDITION 4: Press Kit Download -->
+    <section class="container fade-in" style="margin-top: 60px;">
+        <div style="background: #f8fafc; border-radius: var(--radius-lg); padding: 40px; text-align: center;">
+            <i class="fa-solid fa-folder-arrow-down fa-3x" style="color: var(--secondary); margin-bottom: 20px;"></i>
+            <h3>Media & Press Kit</h3>
+            <p style="color: var(--text-light); margin-top: 10px; margin-bottom: 20px;">Writing an article about us? Download our official logos, brand guidelines, and high-res executive headshots.</p>
+            <button class="btn-primary" style="margin: 0 auto;" onclick="window.location.href='404.html'">Download .ZIP (14MB)</button>
+        </div>
+    </section>
+
+    <!-- ADDITION 5: Partner Agencies Directory -->
+    <section class="container fade-in" style="margin-top: 100px; margin-bottom: 100px; text-align: center;">
+        <h2 class="reveal-text">Need help implementing?</h2>
+        <p style="color: var(--text-light); margin: 20px 0 30px;">We have a network of certified agency partners worldwide ready to architect your workspace.</p>
+        <a href="404.html" style="color: var(--primary); font-weight: 600; font-size: 1.1rem;">Browse Certified Partners <i class="fa-solid fa-arrow-right"></i></a>
+    </section>
+
+    <footer class="footer new-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="index.html" class="footer-logo"><img src="assets/logo.webp" alt="Stackly Logo" style="height: 36px; width: auto; object-fit: contain; margin-bottom: 8px;"></a>
+                    <p class="footer-desc">Premium SaaS workflow platform delivering robust culinary-level coding experiences right to your startup. Your growth, our expertise.</p>
+                    <div class="footer-socials">
+                        <a href="404.html"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="404.html"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="404.html"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="404.html"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html">Project Management</a></li>
+                        <li><a href="services.html">Advanced Analytics</a></li>
+                        <li><a href="services.html">Cloud Automation</a></li>
+                        <li><a href="services.html">Enterprise Security</a></li>
+                        <li><a href="services.html">API Integrations</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <ul class="contact-info">
+                        <li>hello@stackly.com</li>
+                        <li>+91 98765 43210</li>
+                        <li>Salem, Tamil Nadu</li>
+                        <li>Mon - Fri: 9AM - 6PM</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="copy">&copy; 2026 Stackly. All rights reserved.</div>
+                <div class="legal-links">
+                    <a href="404.html">Privacy Policy</a>
+                    <a href="404.html">Terms of Service</a>
+                    <a href="404.html">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+        
+        <a href="#header" class="back-to-top"><i class="fa-solid fa-chevron-up"></i></a>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/form.js"></script>
+</body>
+</html>

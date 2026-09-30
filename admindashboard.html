@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | STACKLY</title>
+    <link rel="stylesheet" href="admindashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <aside class="sidebar">
+        <a href="index.html" class="logo-area"><img src="assets/logo.webp" alt="Stackly Logo" style="height: 36px; width: auto; object-fit: contain;"></a>
+        
+        <div class="sidebar-profile">
+            <div class="sp-avatar">AD</div>
+            <div class="sp-info">
+                <div class="sp-name">Super Admin</div>
+                <div class="sp-email">admin@stackly.com</div>
+                <div class="sp-badge">ADMIN PANEL</div>
+            </div>
+        </div>
+
+        <div class="nav-section">
+            <div class="nav-heading">MANAGEMENT</div>
+            <a href="#" class="nav-link active" onclick="document.querySelector('.sidebar').classList.remove('active'); document.querySelector('.sidebar-overlay').classList.remove('active'); switchSection(event, 'section-overview')">Overview</a>
+            <a href="#" class="nav-link" onclick="document.querySelector('.sidebar').classList.remove('active'); document.querySelector('.sidebar-overlay').classList.remove('active'); switchSection(event, 'section-workspaces')">Workspaces</a>
+            <a href="#" class="nav-link" onclick="document.querySelector('.sidebar').classList.remove('active'); document.querySelector('.sidebar-overlay').classList.remove('active'); switchSection(event, 'section-billing')">Billing</a>
+        </div>
+        
+        <div class="nav-section">
+            <div class="nav-heading">SYSTEM</div>
+            <a href="#" class="nav-link" onclick="document.querySelector('.sidebar').classList.remove('active'); document.querySelector('.sidebar-overlay').classList.remove('active'); switchSection(event, 'section-infrastructure')">Infrastructure</a>
+            <a href="#" class="nav-link" onclick="document.querySelector('.sidebar').classList.remove('active'); document.querySelector('.sidebar-overlay').classList.remove('active'); switchSection(event, 'section-analytics')">Global Analytics</a>
+            <a href="#" class="nav-link" onclick="document.querySelector('.sidebar').classList.remove('active'); document.querySelector('.sidebar-overlay').classList.remove('active'); switchSection(event, 'section-logs')">Security Logs</a>
+        </div>
+        
+        <div class="nav-section">
+            <div class="nav-heading">ACCOUNT</div>
+            <a href="#" class="nav-link" onclick="document.querySelector('.sidebar').classList.remove('active'); document.querySelector('.sidebar-overlay').classList.remove('active'); switchSection(event, 'section-profile')">Admin Profile</a>
+            <a href="login.html" class="nav-logout" onclick="localStorage.removeItem(\'stacklyUserEmail\')"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a>
+        </div>
+    </aside>
+
+    <div class="main-wrapper">
+        <div class="sidebar-overlay" onclick="document.querySelector('.sidebar').classList.remove('active'); this.classList.remove('active');"></div>
+        <header class="topbar">
+            <div class="mobile-hamburger" onclick="document.querySelector('.sidebar').classList.add('active'); document.querySelector('.sidebar-overlay').classList.add('active');">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            
+            <div class="search-bar desktop-only">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="Search workspaces, users...">
+            </div>
+            
+            <div class="mobile-logo">
+                <img src="assets/logo.webp" alt="Stackly Logo" style="height: 20px; object-fit: contain;">
+            </div>
+
+            <div class="topbar-right">
+                <div class="bell-icon"><i class="fa-regular fa-bell"></i><div class="bell-badge" style="background:#5c43f6;">5</div></div>
+                <div class="topbar-user">
+                    <div class="topbar-avatar">AD</div>
+                    <span style="font-size: 0.9rem; font-weight: 500;">Admin</span>
+                </div>
+            </div>
+        </header>
+        
+        <div class="content-area">
+            
+            <!-- Overview Section -->
+            <div id="section-overview" class="dashboard-section" style="display:block;">
+                <h1 class="page-title">Platform Overview</h1>
+                <p class="page-subtitle">Real-time operations & business metrics for Stackly SaaS platform.</p>
+
+                <div class="action-buttons">
+                    <button class="btn-action" onclick="window.location.href='404.html'"><i class="fa-solid fa-file-csv" style="color:#60a5fa;"></i> Export Analytics CSV</button>
+                    <button class="btn-action" onclick="window.location.href='404.html'"><i class="fa-solid fa-bolt" style="color:#5c43f6;"></i> Send Announcement</button>
+                    <button class="btn-action" onclick="window.location.href='404.html'"><i class="fa-solid fa-tag" style="color:#8b5cf6;"></i> Create Promo Code</button>
+                    <button class="btn-action" onclick="window.location.href='404.html'"><i class="fa-solid fa-server" style="color:#a855f7;"></i> Scale Infrastructure</button>
+                </div>
+
+                <div class="card" style="margin-bottom: 24px;">
+                    <div class="pipeline-header">
+                        <h3>Live Global Request Pipeline</h3>
+                        <div class="sys-health"><div class="dot"></div> System Healthy</div>
+                    </div>
+                    <div class="pipeline-bar">
+                        <div class="pipe-1"></div>
+                        <div class="pipe-2"></div>
+                        <div class="pipe-3"></div>
+                    </div>
+                    <div class="pipeline-labels">
+                        <div class="label-item"><div class="label-dot" style="background:#3b82f6;"></div> Ingress (15M)</div>
+                        <div class="label-item"><div class="label-dot" style="background:#8b5cf6;"></div> Processing (28M)</div>
+                        <div class="label-item"><div class="label-dot" style="background:#10b981;"></div> Responded (42M)</div>
+                    </div>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="card stat-box">
+                        <div class="stat-num">₹45.2K</div>
+                        <div class="stat-title">TOTAL MRR</div>
+                        <div class="stat-trend trend-up">&uarr; 12% vs last week</div>
+                    </div>
+                    <div class="card stat-box">
+                        <div class="stat-num">1,245</div>
+                        <div class="stat-title">ACTIVE WORKSPACES</div>
+                        <div class="stat-trend trend-up">&uarr; 5% vs last week</div>
+                    </div>
+                    <div class="card stat-box">
+                        <div class="stat-num">540</div>
+                        <div class="stat-title">ACTIVE NODES</div>
+                        <div class="stat-trend trend-brand">24 scaled today</div>
+                    </div>
+                    <div class="card stat-box">
+                        <div class="stat-num">38 Alerts</div>
+                        <div class="stat-title">SYSTEM NOTICES</div>
+                        <div class="stat-trend trend-brand">94% Resolved</div>
+                    </div>
+                </div>
+
+                <div class="bottom-grid">
+                    <div class="card chart-card">
+                        <div class="chart-title">Daily Revenue Overview (₹)</div>
+                        <div class="mock-bar-chart">
+                            <div class="y-axis"><span>12,000</span><span>10,000</span><span>8,000</span></div>
+                            <div class="bar pink" style="height: 10%;"></div>
+                            <div class="bar pink" style="height: 15%;"></div>
+                            <div class="bar pink" style="height: 5%;"></div>
+                            <div class="bar pink" style="height: 40%;"></div>
+                            <div class="bar pink" style="height: 80%;"></div>
+                            <div class="bar pink" style="height: 20%;"></div>
+                            <div class="bar pink" style="height: 10%;"></div>
+                        </div>
+                    </div>
+                    <div class="card chart-card">
+                        <div class="chart-title">Server Load Distribution</div>
+                        <div style="margin-top: 30px;">
+                            <div class="mock-donut">
+                                <div class="donut-half"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="grid" style="display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:24px;">
+                    <div class="card">
+                        <div class="chart-title">Recent Admin Actions</div>
+                        <table style="width:100%; text-align:left; border-collapse:collapse;">
+                            <tr style="border-bottom:1px solid #2a2e35;"><td style="padding:12px;"><i class="fa-solid fa-code" style="color:#3b82f6; margin-right:10px;"></i> Push global config update</td><td style="color:#9ca3af; text-align:right;">15m ago</td></tr>
+                            <tr style="border-bottom:1px solid #2a2e35;"><td style="padding:12px;"><i class="fa-solid fa-user-xmark" style="color:#ef4444; margin-right:10px;"></i> Ban spam workspace WS-1099</td><td style="color:#9ca3af; text-align:right;">2h ago</td></tr>
+                            <tr><td style="padding:12px;"><i class="fa-solid fa-tag" style="color:#8b5cf6; margin-right:10px;"></i> Generated promo 'WINTER50'</td><td style="color:#9ca3af; text-align:right;">4h ago</td></tr>
+                        </table>
+                    </div>
+                    <div class="card">
+                        <div class="chart-title">Active System Alerts</div>
+                        <div style="padding:12px; border-left:4px solid #f59e0b; background:#111315; border-radius:4px; margin-bottom:10px;">
+                            <strong>High latency in API-Gateway-EU</strong>
+                            <p style="color:#9ca3af; font-size:0.85rem; margin-top:5px;">Avg latency > 400ms detected over last 5 mins.</p>
+                        </div>
+                        <div style="padding:12px; border-left:4px solid #ef4444; background:#111315; border-radius:4px;">
+                            <strong>Failed DB Replica sync</strong>
+                            <p style="color:#9ca3af; font-size:0.85rem; margin-top:5px;">Node postgres-replica-03 disconnected.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Workspaces Section -->
+            <div id="section-workspaces" class="dashboard-section" style="display:none;">
+                <h1 class="page-title">Active Workspaces</h1>
+                <p class="page-subtitle">Manage tenants on the platform.</p>
+                
+                <div class="card" style="margin-bottom:24px; display:flex; gap:16px;">
+                    <div class="search-bar" style="flex:1;"><i class="fa-solid fa-magnifying-glass"></i><input type="text" placeholder="Search by Workspace ID, Owner name, or Plan..."></div>
+                    <select style="background:#1a1d21; border:1px solid #2a2e35; color:#fff; padding:8px 16px; border-radius:8px; outline:none;"><option>Filter: All Plans</option><option>Enterprise</option><option>Pro</option></select>
+                </div>
+
+                <div class="card">
+                    <table style="width:100%; text-align:left; border-collapse:collapse;">
+                        <tr style="border-bottom:1px solid #2a2e35; color:#9ca3af;"><th style="padding:12px;">Workspace ID</th><th style="padding:12px;">Owner</th><th style="padding:12px;">Plan</th><th style="padding:12px;">MRR</th><th style="padding:12px;">Status</th><th style="padding:12px;">Action</th></tr>
+                        <tr style="border-bottom:1px solid #2a2e35;">
+                            <td style="padding:16px;"><strong>WS-1002</strong></td>
+                            <td style="padding:16px;">Acme Corp</td>
+                            <td style="padding:16px;"><span class="pill-theme" style="background:#8b5cf6;">Enterprise</span></td>
+                            <td style="padding:16px;">$2,499</td>
+                            <td style="padding:16px;"><span style="color:#10b981;">Active</span></td>
+                            <td style="padding:16px;"><button class="btn-action" onclick="window.location.href='404.html'">Inspect</button></td>
+                        </tr>
+                        <tr style="border-bottom:1px solid #2a2e35;">
+                            <td style="padding:16px;"><strong>WS-1003</strong></td>
+                            <td style="padding:16px;">Stark Ind</td>
+                            <td style="padding:16px;"><span class="pill-theme" style="background:#3b82f6;">Pro</span></td>
+                            <td style="padding:16px;">$499</td>
+                            <td style="padding:16px;"><span style="color:#10b981;">Active</span></td>
+                            <td style="padding:16px;"><button class="btn-action" onclick="window.location.href='404.html'">Inspect</button></td>
+                        </tr>
+                        <tr style="border-bottom:1px solid #2a2e35;">
+                            <td style="padding:16px;"><strong>WS-1004</strong></td>
+                            <td style="padding:16px;">Wayne Ent</td>
+                            <td style="padding:16px;"><span class="pill-theme" style="background:#8b5cf6;">Enterprise</span></td>
+                            <td style="padding:16px;">$5,999</td>
+                            <td style="padding:16px;"><span style="color:#10b981;">Active</span></td>
+                            <td style="padding:16px;"><button class="btn-action" onclick="window.location.href='404.html'">Inspect</button></td>
+                        </tr>
+                        <tr style="border-bottom:1px solid #2a2e35;">
+                            <td style="padding:16px;"><strong>WS-1005</strong></td>
+                            <td style="padding:16px;">Pied Piper</td>
+                            <td style="padding:16px;"><span class="pill-theme" style="background:#3b82f6;">Pro</span></td>
+                            <td style="padding:16px;">$499</td>
+                            <td style="padding:16px;"><span style="color:#f59e0b;">Warning</span></td>
+                            <td style="padding:16px;"><button class="btn-action" onclick="window.location.href='404.html'">Inspect</button></td>
+                        </tr>
+                        <tr style="border-bottom:1px solid #2a2e35;">
+                            <td style="padding:16px;"><strong>WS-1006</strong></td>
+                            <td style="padding:16px;">Hooli</td>
+                            <td style="padding:16px;"><span class="pill-theme" style="background:#10b981;">Free</span></td>
+                            <td style="padding:16px;">$0</td>
+                            <td style="padding:16px;"><span style="color:#6b7280;">Inactive</span></td>
+                            <td style="padding:16px;"><button class="btn-action" onclick="window.location.href='404.html'">Inspect</button></td>
+                        </tr>
+                        <tr style="border-bottom:1px solid #2a2e35;">
+                            <td style="padding:16px;"><strong>WS-1007</strong></td>
+                            <td style="padding:16px;">Massive Dynamic</td>
+                            <td style="padding:16px;"><span class="pill-theme" style="background:#8b5cf6;">Enterprise</span></td>
+                            <td style="padding:16px;">$12,499</td>
+                            <td style="padding:16px;"><span style="color:#10b981;">Active</span></td>
+                            <td style="padding:16px;"><button class="btn-action" onclick="window.location.href='404.html'">Inspect</button></td>
+                        </tr>
+                        <tr>
+                            <td style="padding:16px;"><strong>WS-1008</strong></td>
+                            <td style="padding:16px;">Umbrella Corp</td>
+                            <td style="padding:16px;"><span class="pill-theme" style="background:#3b82f6;">Pro</span></td>
+                            <td style="padding:16px;">$499</td>
+                            <td style="padding:16px;"><span style="color:#ef4444;">Suspended</span></td>
+                            <td style="padding:16px;"><button class="btn-action" onclick="window.location.href='404.html'">Inspect</button></td>
+                        </tr>
+                    </table>
+                    <button class="btn-action" style="width:100%; justify-content:center; margin-top:16px;" onclick="window.location.href='404.html'">Load Next 50 Workspaces...</button>
+                </div>
+            </div>
+
+            <!-- Billing Section -->
+            <div id="section-billing" class="dashboard-section" style="display:none;">
+                <h1 class="page-title">Global Billing</h1>
+                <p class="page-subtitle">Platform-wide revenue and outstanding invoices.</p>
+                <div class="stats-grid" style="margin-top:0; margin-bottom:24px;">
+                    <div class="card stat-box">
+                        <div class="stat-num">₹142.5K</div>
+                        <div class="stat-title">ARR RUNRATE</div>
+                        <div class="stat-trend trend-up">&uarr; Stable</div>
+                    </div>
+                    <div class="card stat-box">
+                        <div class="stat-num">1.2%</div>
+                        <div class="stat-title">CHURN RATE</div>
+                        <div class="stat-trend trend-up">&darr; Improved vs Q2</div>
+                    </div>
+                    <div class="card stat-box">
+                        <div class="stat-num">₹2,400</div>
+                        <div class="stat-title">OUTSTANDING</div>
+                        <div class="stat-trend" style="color:#ef4444;">3 Overdue accounts</div>
+                    </div>
+                </div>
+                
+                <div class="grid" style="display:grid; grid-template-columns:2fr 1fr; gap:24px;">
+                    <div class="card">
+                        <h3>Recent Transactions</h3>
+                        <table style="width:100%; text-align:left; border-collapse:collapse; margin-top:16px;">
+                            <tr style="border-bottom:1px solid #2a2e35; color:#9ca3af;"><th style="padding:12px;">TXN ID</th><th style="padding:12px;">Workspace</th><th style="padding:12px;">Amount</th><th style="padding:12px;">Status</th></tr>
+                            <tr style="border-bottom:1px solid #2a2e35;">
+                                <td style="padding:16px;">TXN_9921</td><td style="padding:16px;">Acme Corp</td><td style="padding:16px;">₹2,499.00</td>
+                                <td style="padding:16px;"><span style="color:#10b981;">Successful</span></td>
+                            </tr>
+                            <tr style="border-bottom:1px solid #2a2e35;">
+                                <td style="padding:16px;">TXN_9920</td><td style="padding:16px;">Stark Ind</td><td style="padding:16px;">₹499.00</td>
+                                <td style="padding:16px;"><span style="color:#10b981;">Successful</span></td>
+                            </tr>
+                            <tr style="border-bottom:1px solid #2a2e35;">
+                                <td style="padding:16px;">TXN_9919</td><td style="padding:16px;">Wayne Ent</td><td style="padding:16px;">₹5,999.00</td>
+                                <td style="padding:16px;"><span style="color:#10b981;">Successful</span></td>
+                            </tr>
+                            <tr style="border-bottom:1px solid #2a2e35;">
+                                <td style="padding:16px;">TXN_9918</td><td style="padding:16px;">Umbrella Corp</td><td style="padding:16px;">₹499.00</td>
+                                <td style="padding:16px;"><span style="color:#ef4444;">Card Declined</span></td>
+                            </tr>
+                            <tr>
+                                <td style="padding:16px;">TXN_9917</td><td style="padding:16px;">Pied Piper</td><td style="padding:16px;">₹499.00</td>
+                                <td style="padding:16px;"><span style="color:#10b981;">Successful</span></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="card">
+                        <h3>Upcoming Renewals</h3>
+                        <div style="margin-top:16px; padding:12px; border:1px solid #2a2e35; border-radius:8px; margin-bottom:10px;">
+                            <strong>Massive Dynamic</strong><br>
+                            <span style="color:#9ca3af; font-size:0.85rem;">Enterprise • Renews tomorrow ($12,499)</span>
+                        </div>
+                        <div style="padding:12px; border:1px solid #2a2e35; border-radius:8px;">
+                            <strong>Oscorp</strong><br>
+                            <span style="color:#9ca3af; font-size:0.85rem;">Pro • Renews in 2 days ($499)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Infrastructure Section -->
+            <div id="section-infrastructure" class="dashboard-section" style="display:none;">
+                <h1 class="page-title">Infrastructure Map</h1>
+                <p class="page-subtitle">Manage server nodes and container health.</p>
+                <div class="grid" style="display:grid; grid-template-columns:1fr 1fr; gap:24px;">
+                    <div class="card">
+                        <h3><i class="fa-solid fa-server" style="color:#10b981;"></i> AWS US-East-1</h3>
+                        <p style="color:#9ca3af; margin:10px 0;">120 Nodes Active</p>
+                        <div style="width:100%; height:8px; background:#111315; border-radius:4px;"><div style="width:45%; height:100%; background:#10b981;"></div></div>
+                        <p style="font-size:0.8rem; margin-top:5px;">CPU: 45%</p>
+                    </div>
+                    <div class="card">
+                        <h3><i class="fa-solid fa-server" style="color:#10b981;"></i> AWS EU-West-2</h3>
+                        <p style="color:#9ca3af; margin:10px 0;">84 Nodes Active</p>
+                        <div style="width:100%; height:8px; background:#111315; border-radius:4px;"><div style="width:78%; height:100%; background:#f59e0b;"></div></div>
+                        <p style="font-size:0.8rem; margin-top:5px;">CPU: 78% (Warning)</p>
+                    </div>
+                    <div class="card">
+                        <h3><i class="fa-solid fa-server" style="color:#10b981;"></i> GCP Asia-South</h3>
+                        <p style="color:#9ca3af; margin:10px 0;">45 Nodes Active</p>
+                        <div style="width:100%; height:8px; background:#111315; border-radius:4px;"><div style="width:20%; height:100%; background:#10b981;"></div></div>
+                        <p style="font-size:0.8rem; margin-top:5px;">CPU: 20%</p>
+                    </div>
+                    <div class="card">
+                        <h3><i class="fa-solid fa-server" style="color:#10b981;"></i> AWS AP-Northeast (Tokyo)</h3>
+                        <p style="color:#9ca3af; margin:10px 0;">60 Nodes Active</p>
+                        <div style="width:100%; height:8px; background:#111315; border-radius:4px;"><div style="width:35%; height:100%; background:#10b981;"></div></div>
+                        <p style="font-size:0.8rem; margin-top:5px;">CPU: 35%</p>
+                    </div>
+                </div>
+                
+                <div class="card" style="margin-top:24px;">
+                    <h3>Database Clusters (PostgreSQL)</h3>
+                    <table style="width:100%; text-align:left; border-collapse:collapse; margin-top:16px;">
+                        <tr style="border-bottom:1px solid #2a2e35; color:#9ca3af;"><th style="padding:12px;">Cluster</th><th style="padding:12px;">Region</th><th style="padding:12px;">Storage</th><th style="padding:12px;">Replication Delay</th></tr>
+                        <tr style="border-bottom:1px solid #2a2e35;">
+                            <td style="padding:16px;"><strong>db-main-01</strong></td><td style="padding:16px;">US-East-1</td><td style="padding:16px;">4.2 TB / 10 TB</td><td style="padding:16px; color:#10b981;">0ms</td>
+                        </tr>
+                        <tr>
+                            <td style="padding:16px;"><strong>db-replica-eu</strong></td><td style="padding:16px;">EU-West-2</td><td style="padding:16px;">4.2 TB / 10 TB</td><td style="padding:16px; color:#f59e0b;">12ms</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Analytics Section -->
+            <div id="section-analytics" class="dashboard-section" style="display:none;">
+                <h1 class="page-title">Global Analytics</h1>
+                <p class="page-subtitle">Deep dive into user acquisition and API traffic.</p>
+                <div class="card" style="height:300px; display:flex; align-items:center; justify-content:center; margin-bottom:24px;">
+                    <div style="text-align:center; color:#9ca3af;">
+                        <i class="fa-solid fa-earth-americas fa-4x" style="margin-bottom:20px; color:#5c43f6;"></i>
+                        <h3>Global Traffic Map</h3>
+                        <p>Loading interactive WebGL globe...</p>
+                    </div>
+                </div>
+                
+                <div class="grid" style="display:grid; grid-template-columns:1fr 1fr; gap:24px;">
+                    <div class="card">
+                        <h3>Traffic by Region (Last 24h)</h3>
+                        <div style="margin-top:16px; display:flex; justify-content:space-between; border-bottom:1px solid #2a2e35; padding-bottom:8px;"><span>North America</span> <strong>45%</strong></div>
+                        <div style="margin-top:8px; display:flex; justify-content:space-between; border-bottom:1px solid #2a2e35; padding-bottom:8px;"><span>Europe</span> <strong>32%</strong></div>
+                        <div style="margin-top:8px; display:flex; justify-content:space-between; border-bottom:1px solid #2a2e35; padding-bottom:8px;"><span>Asia Pacific</span> <strong>18%</strong></div>
+                        <div style="margin-top:8px; display:flex; justify-content:space-between;"><span>Other</span> <strong>5%</strong></div>
+                    </div>
+                    <div class="card">
+                        <h3>API Endpoint Popularity</h3>
+                        <div style="margin-top:16px; display:flex; justify-content:space-between; border-bottom:1px solid #2a2e35; padding-bottom:8px;"><code style="color:#60a5fa;">POST /v2/deploy</code> <strong>12.4M calls</strong></div>
+                        <div style="margin-top:8px; display:flex; justify-content:space-between; border-bottom:1px solid #2a2e35; padding-bottom:8px;"><code style="color:#60a5fa;">GET /v2/status</code> <strong>8.1M calls</strong></div>
+                        <div style="margin-top:8px; display:flex; justify-content:space-between; border-bottom:1px solid #2a2e35; padding-bottom:8px;"><code style="color:#60a5fa;">POST /v1/auth</code> <strong>5.2M calls</strong></div>
+                        <div style="margin-top:8px; display:flex; justify-content:space-between;"><code style="color:#60a5fa;">GET /v1/users</code> <strong>3.1M calls</strong></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Security Logs Section -->
+            <div id="section-logs" class="dashboard-section" style="display:none;">
+                <h1 class="page-title">Security & Audit Logs</h1>
+                <p class="page-subtitle">Track admin actions and failed authentications.</p>
+                <div class="card">
+                    <div style="display:flex; justify-content:space-between; margin-bottom:16px;">
+                        <div class="search-bar"><i class="fa-solid fa-magnifying-glass"></i><input type="text" placeholder="Search logs..."></div>
+                        <button class="btn-action" onclick="window.location.href='404.html'"><i class="fa-solid fa-download"></i> Export Logs</button>
+                    </div>
+                    <table style="width:100%; text-align:left; border-collapse:collapse;">
+                        <tr style="border-bottom:1px solid #2a2e35; color:#9ca3af;"><th style="padding:12px;">Timestamp</th><th style="padding:12px;">Event</th><th style="padding:12px;">IP Address</th><th style="padding:12px;">Severity</th></tr>
+                        <tr style="border-bottom:1px solid #2a2e35;">
+                            <td style="padding:16px; color:#9ca3af;">14:32:01</td>
+                            <td style="padding:16px;">Failed Admin Login (Invalid Password)</td>
+                            <td style="padding:16px; font-family:monospace;">192.168.1.104</td>
+                            <td style="padding:16px;"><span class="pill-theme" style="background:#ef4444;">High</span></td>
+                        </tr>
+                        <tr style="border-bottom:1px solid #2a2e35;">
+                            <td style="padding:16px; color:#9ca3af;">14:30:12</td>
+                            <td style="padding:16px;">Infrastructure Scaled (+4 nodes)</td>
+                            <td style="padding:16px; font-family:monospace;">System Auto</td>
+                            <td style="padding:16px;"><span class="pill-theme" style="background:#3b82f6;">Info</span></td>
+                        </tr>
+                        <tr style="border-bottom:1px solid #2a2e35;">
+                            <td style="padding:16px; color:#9ca3af;">12:15:00</td>
+                            <td style="padding:16px;">SuperAdmin Login Success</td>
+                            <td style="padding:16px; font-family:monospace;">10.0.0.45</td>
+                            <td style="padding:16px;"><span class="pill-theme" style="background:#10b981;">Low</span></td>
+                        </tr>
+                        <tr style="border-bottom:1px solid #2a2e35;">
+                            <td style="padding:16px; color:#9ca3af;">09:45:22</td>
+                            <td style="padding:16px;">Workspace WS-1008 Suspended (Billing)</td>
+                            <td style="padding:16px; font-family:monospace;">System Auto</td>
+                            <td style="padding:16px;"><span class="pill-theme" style="background:#f59e0b;">Medium</span></td>
+                        </tr>
+                        <tr style="border-bottom:1px solid #2a2e35;">
+                            <td style="padding:16px; color:#9ca3af;">08:12:05</td>
+                            <td style="padding:16px;">DDoS Mitigation Triggered (EU-West)</td>
+                            <td style="padding:16px; font-family:monospace;">Cloudflare WAF</td>
+                            <td style="padding:16px;"><span class="pill-theme" style="background:#ef4444;">High</span></td>
+                        </tr>
+                        <tr style="border-bottom:1px solid #2a2e35;">
+                            <td style="padding:16px; color:#9ca3af;">08:05:10</td>
+                            <td style="padding:16px;">API Key Revoked (WS-1002)</td>
+                            <td style="padding:16px; font-family:monospace;">User Action</td>
+                            <td style="padding:16px;"><span class="pill-theme" style="background:#f59e0b;">Medium</span></td>
+                        </tr>
+                    </table>
+                    <button class="btn-action" style="width:100%; justify-content:center; margin-top:16px;" onclick="window.location.href='404.html'">Load Older Logs</button>
+                </div>
+            </div>
+
+            <!-- Profile Section -->
+            <div id="section-profile" class="dashboard-section" style="display:none;">
+                <h1 class="page-title">Admin Profile</h1>
+                <p class="page-subtitle">Manage your root credentials and SSH keys.</p>
+                <div class="card">
+                    <div style="display:flex; gap:24px; align-items:center; margin-bottom:32px;">
+                        <div style="width:80px; height:80px; background:#5c43f6; color:white; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:2rem; font-weight:bold;">AD</div>
+                        <div><button class="btn-action" onclick="window.location.href='404.html'"><i class="fa-solid fa-lock"></i> Force Password Reset</button></div>
+                    </div>
+                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px;">
+                        <div>
+                            <label style="color:#9ca3af; font-size:0.85rem;">Root Username</label>
+                            <input type="text" value="Super Admin" style="width:100%; background:#111315; border:1px solid #2a2e35; color:white; padding:12px; border-radius:8px; margin-top:8px; outline:none;" readonly>
+                        </div>
+                        <div>
+                            <label style="color:#9ca3af; font-size:0.85rem;">Contact Email</label>
+                            <input type="email" value="admin@stackly.com" style="width:100%; background:#111315; border:1px solid #2a2e35; color:white; padding:12px; border-radius:8px; margin-top:8px; outline:none;">
+                        </div>
+                    </div>
+                    
+                    <h3 style="margin-top:40px; margin-bottom:16px;">SSH Keys</h3>
+                    <div style="border:1px solid #2a2e35; padding:16px; border-radius:8px; display:flex; justify-content:space-between; align-items:center;">
+                        <div>
+                            <strong>MacBook Pro 2024</strong>
+                            <p style="color:#9ca3af; font-size:0.85rem; font-family:monospace;">ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQ...</p>
+                        </div>
+                        <button class="btn-action" style="color:#ef4444; border-color:#ef4444;" onclick="window.location.href='404.html'">Remove</button>
+                    </div>
+                    <button class="btn-action" style="margin-top:16px;" onclick="window.location.href='404.html'"><i class="fa-solid fa-plus"></i> Add New Key</button>
+
+                    <button class="btn-theme" style="margin-top:40px;" onclick="window.location.href='404.html'"><i class="fa-solid fa-save"></i> Save Changes</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    
+    <script>
+    function switchSection(e, sectionId) {
+        if(e) e.preventDefault();
+        const navLinks = document.querySelectorAll('.nav-link:not(.external)');
+        navLinks.forEach(link => link.classList.remove('active'));
+        if(e) { e.currentTarget.classList.add('active'); }
+        const sections = document.querySelectorAll('.dashboard-section');
+        sections.forEach(sec => sec.style.display = 'none');
+        document.getElementById(sectionId).style.display = 'block';
+    }
+    </script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const email = localStorage.getItem('stacklyUserEmail');
+    if (email) {
+        // Extract name from email (e.g., john.doe@... -> John Doe)
+        let rawName = email.split('@')[0].replace(/[^a-zA-Z0-9]/g, ' ');
+        let nameParts = rawName.split(' ').filter(p => p.length > 0);
+        if(nameParts.length === 0) nameParts = ["User"];
+        
+        let firstName = nameParts[0].charAt(0).toUpperCase() + nameParts[0].slice(1).toLowerCase();
+        let fullName = nameParts.map(p => p.charAt(0).toUpperCase() + p.slice(1).toLowerCase()).join(' ');
+        
+        // Get initials (up to 2 chars)
+        let initials = nameParts.length > 1 
+            ? (nameParts[0][0] + nameParts[1][0]).toUpperCase()
+            : firstName.substring(0, 2).toUpperCase();
+
+        // Update elements
+        const spEmail = document.querySelector('.sp-email');
+        if (spEmail) spEmail.textContent = email;
+
+        const spName = document.querySelector('.sp-name');
+        if (spName) {
+            // Append role if needed based on the page we are on
+            if(document.body.innerHTML.includes('Admin Profile')) {
+                spName.textContent = fullName + ' (Admin)';
+            } else {
+                spName.textContent = fullName;
+            }
+        }
+
+        const spAvatar = document.querySelector('.sp-avatar');
+        if (spAvatar) spAvatar.textContent = initials;
+
+        const topbarAvatar = document.querySelector('.topbar-avatar');
+        if (topbarAvatar) topbarAvatar.textContent = initials;
+
+        const topbarName = document.querySelector('.topbar-user span');
+        if (topbarName) topbarName.textContent = firstName;
+
+        const welcomeTitle = document.querySelector('.page-title');
+        if (welcomeTitle && welcomeTitle.textContent.includes('Welcome')) {
+            // Some dashboards might say "Platform Overview", only update if it has Welcome
+            if(welcomeTitle.textContent.includes('back')) {
+                welcomeTitle.textContent = `Welcome back, ${firstName}!`;
+            }
+        }
+    }
+});
+</script>
+</body>
+
+</html>
