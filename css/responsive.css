@@ -33,7 +33,7 @@ html, body {
     }
 
     /* Word wrap for terminal strings and code blocks */
-    .tilt-card, pre, code, .code-block, [id="typer"] {
+    pre, code, .code-block, [id="typer"] {
         white-space: pre-wrap !important;
         word-break: break-all !important;
         overflow-wrap: break-word !important;
@@ -178,4 +178,81 @@ html, body {
         display: block !important;
     }
     
+}
+
+@media (max-width: 768px) {
+    .map-card-mobile-hide { display: none !important; }
+}
+
+@media (max-width: 768px) {
+    /* Fix blog page featured post */
+    .featured-post {
+        flex-direction: column !important;
+        gap: 20px !important;
+    }
+    .featured-img {
+        min-height: 200px !important;
+        width: 100% !important;
+    }
+    .featured-content {
+        padding: 20px !important;
+    }
+    
+    /* Fix Author Spotlight tilt card which has inline flex */
+    .tilt-card[style*="display: flex"] {
+        flex-direction: column !important;
+        gap: 20px !important;
+        text-align: center;
+    }
+    
+    /* Fix podcast player */
+    .podcast-player {
+        flex-wrap: wrap !important;
+        gap: 15px !important;
+    }
+    .podcast-player > div:not(.play-btn) {
+        flex: 1 1 100% !important;
+        text-align: center;
+    }
+    .podcast-player .play-btn {
+        flex: 0 0 50px !important;
+        margin: 0 auto 15px auto !important;
+    }
+    .podcast-player .progress-bar {
+        width: 100% !important;
+        margin: 10px 0 !important;
+    }
+}
+
+@media (max-width: 768px) {
+    /* 404 page buttons */
+    .error-actions {
+        flex-direction: column !important;
+        width: 100% !important;
+    }
+    .error-actions .magnetic-wrap {
+        width: 100% !important;
+    }
+    .error-actions .btn {
+        width: 100% !important;
+        white-space: nowrap !important;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Center align contact page text on mobile */
+    .contact-left-col {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .contact-left-col > div {
+        align-items: center;
+    }
+    .contact-left-col > div > div.fade-in {
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center;
+    }
 }

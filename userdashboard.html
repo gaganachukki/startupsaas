@@ -283,7 +283,7 @@
                 <div class="card card-theme-top" style="margin-bottom:24px;">
                     <h3>Production Key</h3>
                     <p style="color:#9ca3af; margin-top:8px; font-size:0.9rem;">Used for your live, public-facing applications.</p>
-                    <div style="display:flex; gap:12px; margin-top:16px;">
+                    <div style="display:flex; gap:12px; margin-top:16px; flex-wrap: wrap;">
                         <input type="password" value="sk_prod_9876543210abcdef" readonly style="flex:1; background:#111315; border:1px solid #2a2e35; color:#d1d5db; padding:12px; border-radius:8px; outline:none;">
                         <button class="btn-action" onclick="window.location.href='404.html'"><i class="fa-regular fa-copy"></i> Copy</button>
                         <button class="btn-action" style="color:#ef4444; border-color:#ef4444;" onclick="window.location.href='404.html'"><i class="fa-solid fa-rotate"></i> Revoke</button>
@@ -292,7 +292,7 @@
                 <div class="card card-theme-top" style="margin-bottom:24px;">
                     <h3>Development Key</h3>
                     <p style="color:#9ca3af; margin-top:8px; font-size:0.9rem;">Used for local testing and staging environments.</p>
-                    <div style="display:flex; gap:12px; margin-top:16px;">
+                    <div style="display:flex; gap:12px; margin-top:16px; flex-wrap: wrap;">
                         <input type="text" value="sk_test_12345qwerty" readonly style="flex:1; background:#111315; border:1px solid #2a2e35; color:#d1d5db; padding:12px; border-radius:8px; outline:none;">
                         <button class="btn-action" onclick="window.location.href='404.html'"><i class="fa-regular fa-copy"></i> Copy</button>
                     </div>
@@ -304,11 +304,11 @@
                         <button class="btn-action" onclick="window.location.href='404.html'"><i class="fa-solid fa-plus"></i> Add Endpoint</button>
                     </div>
                     <div style="border:1px solid #2a2e35; border-radius:8px; padding:16px; margin-bottom:12px;">
-                        <div style="display:flex; justify-content:space-between;"><strong>https://api.myapp.com/webhooks/deploy</strong> <span style="color:#10b981;">Active</span></div>
+                        <div style="display:flex; justify-content:space-between; flex-wrap: wrap; gap: 10px;"><strong style="word-break: break-all; max-width: 100%;">https://api.myapp.com/webhooks/deploy</strong> <span style="color:#10b981;">Active</span></div>
                         <p style="color:#9ca3af; font-size:0.85rem; margin-top:8px;">Listens for: <code>deployment.success</code>, <code>deployment.failed</code></p>
                     </div>
                     <div style="border:1px solid #2a2e35; border-radius:8px; padding:16px;">
-                        <div style="display:flex; justify-content:space-between;"><strong>https://slack.com/api/webhooks/1234</strong> <span style="color:#10b981;">Active</span></div>
+                        <div style="display:flex; justify-content:space-between; flex-wrap: wrap; gap: 10px;"><strong style="word-break: break-all; max-width: 100%;">https://slack.com/api/webhooks/1234</strong> <span style="color:#10b981;">Active</span></div>
                         <p style="color:#9ca3af; font-size:0.85rem; margin-top:8px;">Listens for: <code>billing.invoice_created</code></p>
                     </div>
                 </div>

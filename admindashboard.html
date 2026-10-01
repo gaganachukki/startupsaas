@@ -147,11 +147,11 @@
                 <div class="grid" style="display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:24px;">
                     <div class="card">
                         <div class="chart-title">Recent Admin Actions</div>
-                        <table style="width:100%; text-align:left; border-collapse:collapse;">
+                        <div style="overflow-x: auto; width: 100%;"><table style="width:100%; text-align:left; border-collapse:collapse;">
                             <tr style="border-bottom:1px solid #2a2e35;"><td style="padding:12px;"><i class="fa-solid fa-code" style="color:#3b82f6; margin-right:10px;"></i> Push global config update</td><td style="color:#9ca3af; text-align:right;">15m ago</td></tr>
                             <tr style="border-bottom:1px solid #2a2e35;"><td style="padding:12px;"><i class="fa-solid fa-user-xmark" style="color:#ef4444; margin-right:10px;"></i> Ban spam workspace WS-1099</td><td style="color:#9ca3af; text-align:right;">2h ago</td></tr>
                             <tr><td style="padding:12px;"><i class="fa-solid fa-tag" style="color:#8b5cf6; margin-right:10px;"></i> Generated promo 'WINTER50'</td><td style="color:#9ca3af; text-align:right;">4h ago</td></tr>
-                        </table>
+                        </table></div>
                     </div>
                     <div class="card">
                         <div class="chart-title">Active System Alerts</div>
@@ -178,7 +178,7 @@
                 </div>
 
                 <div class="card">
-                    <table style="width:100%; text-align:left; border-collapse:collapse;">
+                    <div style="overflow-x: auto; width: 100%;"><table style="width:100%; text-align:left; border-collapse:collapse;">
                         <tr style="border-bottom:1px solid #2a2e35; color:#9ca3af;"><th style="padding:12px;">Workspace ID</th><th style="padding:12px;">Owner</th><th style="padding:12px;">Plan</th><th style="padding:12px;">MRR</th><th style="padding:12px;">Status</th><th style="padding:12px;">Action</th></tr>
                         <tr style="border-bottom:1px solid #2a2e35;">
                             <td style="padding:16px;"><strong>WS-1002</strong></td>
@@ -236,7 +236,7 @@
                             <td style="padding:16px;"><span style="color:#ef4444;">Suspended</span></td>
                             <td style="padding:16px;"><button class="btn-action" onclick="window.location.href='404.html'">Inspect</button></td>
                         </tr>
-                    </table>
+                    </table></div>
                     <button class="btn-action" style="width:100%; justify-content:center; margin-top:16px;" onclick="window.location.href='404.html'">Load Next 50 Workspaces...</button>
                 </div>
             </div>
@@ -266,7 +266,7 @@
                 <div class="grid" style="display:grid; grid-template-columns:2fr 1fr; gap:24px;">
                     <div class="card">
                         <h3>Recent Transactions</h3>
-                        <table style="width:100%; text-align:left; border-collapse:collapse; margin-top:16px;">
+                        <div style="overflow-x: auto; width: 100%;"><table style="width:100%; text-align:left; border-collapse:collapse; margin-top:16px;">
                             <tr style="border-bottom:1px solid #2a2e35; color:#9ca3af;"><th style="padding:12px;">TXN ID</th><th style="padding:12px;">Workspace</th><th style="padding:12px;">Amount</th><th style="padding:12px;">Status</th></tr>
                             <tr style="border-bottom:1px solid #2a2e35;">
                                 <td style="padding:16px;">TXN_9921</td><td style="padding:16px;">Acme Corp</td><td style="padding:16px;">₹2,499.00</td>
@@ -288,7 +288,7 @@
                                 <td style="padding:16px;">TXN_9917</td><td style="padding:16px;">Pied Piper</td><td style="padding:16px;">₹499.00</td>
                                 <td style="padding:16px;"><span style="color:#10b981;">Successful</span></td>
                             </tr>
-                        </table>
+                        </table></div>
                     </div>
                     <div class="card">
                         <h3>Upcoming Renewals</h3>
@@ -337,7 +337,7 @@
                 
                 <div class="card" style="margin-top:24px;">
                     <h3>Database Clusters (PostgreSQL)</h3>
-                    <table style="width:100%; text-align:left; border-collapse:collapse; margin-top:16px;">
+                    <div style="overflow-x: auto; width: 100%;"><table style="width:100%; text-align:left; border-collapse:collapse; margin-top:16px;">
                         <tr style="border-bottom:1px solid #2a2e35; color:#9ca3af;"><th style="padding:12px;">Cluster</th><th style="padding:12px;">Region</th><th style="padding:12px;">Storage</th><th style="padding:12px;">Replication Delay</th></tr>
                         <tr style="border-bottom:1px solid #2a2e35;">
                             <td style="padding:16px;"><strong>db-main-01</strong></td><td style="padding:16px;">US-East-1</td><td style="padding:16px;">4.2 TB / 10 TB</td><td style="padding:16px; color:#10b981;">0ms</td>
@@ -345,7 +345,7 @@
                         <tr>
                             <td style="padding:16px;"><strong>db-replica-eu</strong></td><td style="padding:16px;">EU-West-2</td><td style="padding:16px;">4.2 TB / 10 TB</td><td style="padding:16px; color:#f59e0b;">12ms</td>
                         </tr>
-                    </table>
+                    </table></div>
                 </div>
             </div>
 
@@ -388,7 +388,7 @@
                         <div class="search-bar"><i class="fa-solid fa-magnifying-glass"></i><input type="text" placeholder="Search logs..."></div>
                         <button class="btn-action" onclick="window.location.href='404.html'"><i class="fa-solid fa-download"></i> Export Logs</button>
                     </div>
-                    <table style="width:100%; text-align:left; border-collapse:collapse;">
+                    <div style="overflow-x: auto; width: 100%;"><table style="width:100%; text-align:left; border-collapse:collapse;">
                         <tr style="border-bottom:1px solid #2a2e35; color:#9ca3af;"><th style="padding:12px;">Timestamp</th><th style="padding:12px;">Event</th><th style="padding:12px;">IP Address</th><th style="padding:12px;">Severity</th></tr>
                         <tr style="border-bottom:1px solid #2a2e35;">
                             <td style="padding:16px; color:#9ca3af;">14:32:01</td>
@@ -426,7 +426,7 @@
                             <td style="padding:16px; font-family:monospace;">User Action</td>
                             <td style="padding:16px;"><span class="pill-theme" style="background:#f59e0b;">Medium</span></td>
                         </tr>
-                    </table>
+                    </table></div>
                     <button class="btn-action" style="width:100%; justify-content:center; margin-top:16px;" onclick="window.location.href='404.html'">Load Older Logs</button>
                 </div>
             </div>
@@ -452,12 +452,12 @@
                     </div>
                     
                     <h3 style="margin-top:40px; margin-bottom:16px;">SSH Keys</h3>
-                    <div style="border:1px solid #2a2e35; padding:16px; border-radius:8px; display:flex; justify-content:space-between; align-items:center;">
-                        <div>
+                    <div style="border:1px solid #2a2e35; padding:16px; border-radius:8px; display:flex; justify-content:space-between; align-items:center; flex-wrap: wrap; gap: 16px;">
+                        <div style="min-width: 0; flex: 1;">
                             <strong>MacBook Pro 2024</strong>
-                            <p style="color:#9ca3af; font-size:0.85rem; font-family:monospace;">ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQ...</p>
+                            <p style="color:#9ca3af; font-size:0.85rem; font-family:monospace; word-break: break-all;">ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQ...</p>
                         </div>
-                        <button class="btn-action" style="color:#ef4444; border-color:#ef4444;" onclick="window.location.href='404.html'">Remove</button>
+                        <button class="btn-action" style="color:#ef4444; border-color:#ef4444; flex-shrink: 0;" onclick="window.location.href='404.html'">Remove</button>
                     </div>
                     <button class="btn-action" style="margin-top:16px;" onclick="window.location.href='404.html'"><i class="fa-solid fa-plus"></i> Add New Key</button>
 

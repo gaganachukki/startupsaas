@@ -96,11 +96,11 @@
             <div style="background: var(--bg-light); padding: 30px; border-radius: var(--radius-md);">
                 <h3 style="margin-bottom: 20px; font-size: 1.2rem;">Top Contributors</h3>
                 <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
-                    <div style="width: 40px; height: 40px; border-radius: 50%; background: var(--primary);"></div>
+                    <div style="width: 40px; height: 40px; border-radius: 50%; background: var(--primary); flex-shrink: 0;"></div>
                     <div><strong style="display:block; font-size: 0.9rem;">Sarah Chen</strong><span style="font-size: 0.8rem; color: var(--text-light);">15 Articles</span></div>
                 </div>
                 <div style="display: flex; align-items: center; gap: 15px;">
-                    <div style="width: 40px; height: 40px; border-radius: 50%; background: #cbd5e1;"></div>
+                    <div style="width: 40px; height: 40px; border-radius: 50%; background: #cbd5e1; flex-shrink: 0;"></div>
                     <div><strong style="display:block; font-size: 0.9rem;">David Park</strong><span style="font-size: 0.8rem; color: var(--text-light);">8 Articles</span></div>
                 </div>
             </div>
@@ -135,27 +135,26 @@
     <!-- ADDITION 1: Category Filter Pills -->
     <section class="container fade-in" style="margin-top: 40px; margin-bottom: 60px;">
         <div style="display: flex; gap: 10px; overflow-x: auto; padding-bottom: 10px;">
-            <button class="btn-primary btn-sm" style="border-radius: var(--radius-full);" onclick="window.location.href='404.html'">All Posts</button>
-            <button class="btn-secondary btn-sm" style="border-radius: var(--radius-full);" onclick="window.location.href='404.html'">Engineering</button>
-            <button class="btn-secondary btn-sm" style="border-radius: var(--radius-full);" onclick="window.location.href='404.html'">Product Management</button>
-            <button class="btn-secondary btn-sm" style="border-radius: var(--radius-full);" onclick="window.location.href='404.html'">Founders & VCs</button>
-            <button class="btn-secondary btn-sm" style="border-radius: var(--radius-full);" onclick="window.location.href='404.html'">Design</button>
+            <button class="btn btn-primary btn-sm" style="border-radius: var(--radius-full);" onclick="window.location.href='404.html'">All Posts</button>
+            <button class="btn btn-secondary btn-sm" style="border-radius: var(--radius-full);" onclick="window.location.href='404.html'">Engineering</button>
+            <button class="btn btn-secondary btn-sm" style="border-radius: var(--radius-full);" onclick="window.location.href='404.html'">Product Management</button>
+            <button class="btn btn-secondary btn-sm" style="border-radius: var(--radius-full);" onclick="window.location.href='404.html'">Founders & VCs</button>
+            <button class="btn btn-secondary btn-sm" style="border-radius: var(--radius-full);" onclick="window.location.href='404.html'">Design</button>
         </div>
     </section>
 
-    <!-- ADDITION 2: Interactive Reading Progress Bar (Simulated) -->
-    <div style="position: fixed; top: 0; left: 0; height: 4px; background: var(--primary); width: 30%; z-index: 1001;"></div>
+
     
     <!-- ADDITION 3: Author Spotlight Tilt Card -->
     <section class="container fade-in" style="margin-top: 100px;">
         <div class="tilt-card" style="background: linear-gradient(135deg, #1e293b, #0f172a); color: white; display: flex; gap: 40px; align-items: center;">
             <div class="tilt-inner" style="flex: 1;">
-                <div style="width: 150px; height: 150px; background: var(--gradient-main); border-radius: 50%; margin-bottom: 20px;"></div>
+                <img src="assets/author-alan.webp" alt="Dr. Alan Turing" style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%; margin-bottom: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.3); border: 4px solid var(--bg-light);">
             </div>
             <div class="tilt-inner" style="flex: 3;">
                 <h3 style="font-size: 2rem; color: white;">Meet the Editor: Dr. Alan Turing</h3>
                 <p style="color: #cbd5e1; margin-top: 10px; font-size: 1.1rem;">Alan leads our technical writing team, translating complex AI and infrastructure updates into readable, actionable insights for founders.</p>
-                <button class="btn-primary" style="margin-top: 20px;" onclick="window.location.href='404.html'">View All by Alan</button>
+                <div class="magnetic-wrap" style="margin-top: 20px;"><button class="btn btn-primary magnetic-btn" onclick="window.location.href='404.html'">View All by Alan <i class="fa-solid fa-arrow-right" style="margin-left: 8px;"></i></button></div>
             </div>
         </div>
     </section>
@@ -183,7 +182,7 @@
     <section class="container fade-in" style="margin-top: 100px; margin-bottom: 100px; text-align: center;">
         <h2 class="reveal-text">Write for Us</h2>
         <p style="color: var(--text-light); max-width: 600px; margin: 20px auto;">Have a unique perspective on scaling startups, writing clean code, or leading product teams? We pay $500 for published guest articles.</p>
-        <button class="btn-secondary" style="margin: 0 auto;" onclick="window.location.href='404.html'">Submit a Pitch</button>
+        <div class="magnetic-wrap" style="margin: 0 auto; display: block; width: fit-content;"><button class="btn btn-secondary magnetic-btn" onclick="window.location.href='404.html'"><i class="fa-solid fa-pen" style="margin-right: 8px;"></i> Submit a Pitch</button></div>
     </section>
 
     <footer class="footer new-footer">
