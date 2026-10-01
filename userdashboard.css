@@ -186,3 +186,21 @@ body { background: #111315; color: #ffffff; display: flex; height: 100vh; overfl
     .stat-num { font-size: 2rem; }
     div[style*="grid-template-columns:1fr 1fr; gap:24px;"] { grid-template-columns: 1fr !important; }
 }
+
+/* Logout Button Styling */
+.nav-logout {
+    display: block;
+    padding: 12px 24px;
+    color: #ef4444;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: 0.2s;
+    border-top: 1px solid #2a2e35;
+    margin-top: 16px;
+    padding-top: 16px;
+}
+.nav-logout:hover {
+    background: rgba(239, 68, 68, 0.1);
+    color: #f87171;
+}
