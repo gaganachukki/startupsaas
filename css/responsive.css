@@ -121,7 +121,7 @@ html, body {
     /* Login */
     .login-container { flex-direction: column !important; }
     .login-visual { display: none !important; }
-    .login-form-area { width: 100% !important; padding: 20px !important; }
+    .login-form-area { width: 100% !important; padding: 100px 20px 20px 20px !important; }
     
     /* Footer */
     .footer-grid { grid-template-columns: 1fr !important; text-align: center; }
